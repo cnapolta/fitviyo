@@ -19,9 +19,9 @@ export const site = {
     x: "https://x.com/fitviyo",
     tiktok: "https://tiktok.com/@fitviyo",
   },
-  // Displayed waitlist count baseline; live count is fetched from the
-  // `waitlist_count` RPC and falls back to this when unavailable.
-  waitlistBaseCount: 2300,
+  // Baseline added to the live count. 0 = show the real signup count only.
+  // Set to a positive number if you want a pre-seeded "social proof" figure.
+  waitlistBaseCount: 0,
 } as const;
 
 export const sameAs = Object.values(site.socials);

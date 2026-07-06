@@ -38,18 +38,8 @@ export function Hero() {
             <WaitlistForm id="join" />
           </div>
 
-          <div className="mt-6 flex items-center gap-3 text-sm text-bone-60">
-            <div className="flex -space-x-2" aria-hidden="true">
-              {["bg-coral", "bg-bone-60", "bg-line", "bg-coral"].map((c, i) => (
-                <span
-                  key={i}
-                  className={`h-6 w-6 rounded-full border border-ink-0 ${c}`}
-                />
-              ))}
-            </div>
-            <span>
-              <WaitlistCount /> already joined
-            </span>
+          <div className="mt-6">
+            <WaitlistCount />
           </div>
         </div>
 
