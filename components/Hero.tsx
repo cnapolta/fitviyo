@@ -63,7 +63,7 @@ export function Hero() {
               src="/images/hero-athlete-dark-studio.webp"
               alt="An athlete mid-set in a dark studio gym, dramatic side lighting with a subtle coral rim light, shot on 35mm, moody, cinematic, near-black background"
               width={900}
-              height={1100}
+              height={1200}
               priority
               sizes="(max-width: 768px) 90vw, 384px"
               className="h-auto w-full object-cover"
