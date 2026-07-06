@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Fitviyo">
+  <rect width="512" height="512" rx="112" fill="#0C0E11"/>
+  <path d="M176 372V140h150v42h-104v52h92v42h-92v96z" fill="#EDE9E0"/>
+  <circle cx="330" cy="158" r="26" fill="#FF6044"/>
+</svg>

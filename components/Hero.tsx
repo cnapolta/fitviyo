@@ -1,0 +1,76 @@
+import Image from "next/image";
+import { WaitlistForm } from "@/components/WaitlistForm";
+import { WaitlistCount } from "@/components/WaitlistCount";
+
+export function Hero() {
+  return (
+    <section className="relative overflow-hidden" aria-labelledby="hero-heading">
+      {/* Teaser top strip (LANDING.md §4) */}
+      <div className="border-b border-line/70 bg-ink-1">
+        <p className="mx-auto max-w-6xl px-5 py-2.5 text-center text-sm text-bone-60">
+          Something&apos;s coming for people who lift.{" "}
+          <span className="text-coral" aria-hidden="true">
+            →
+          </span>
+        </p>
+      </div>
+
+      <div
+        className="coral-glow pointer-events-none absolute inset-x-0 top-0 h-[600px]"
+        aria-hidden="true"
+      />
+
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24">
+        <div className="relative">
+          <h1
+            id="hero-heading"
+            className="text-balance text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl"
+          >
+            Train on your terms.
+          </h1>
+          <p className="mt-6 max-w-xl text-lg text-bone-60">
+            Fitviyo is the private, beautiful workout and nutrition tracker built
+            for people who actually lift — no clutter, no guilt, no ads. Join the
+            waitlist for early access and founder pricing.
+          </p>
+
+          <div className="mt-8 max-w-xl">
+            <WaitlistForm id="join" />
+          </div>
+
+          <div className="mt-6 flex items-center gap-3 text-sm text-bone-60">
+            <div className="flex -space-x-2" aria-hidden="true">
+              {["bg-coral", "bg-bone-60", "bg-line", "bg-coral"].map((c, i) => (
+                <span
+                  key={i}
+                  className={`h-6 w-6 rounded-full border border-ink-0 ${c}`}
+                />
+              ))}
+            </div>
+            <span>
+              <WaitlistCount /> already joined
+            </span>
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-sm">
+          <div
+            className="coral-glow pointer-events-none absolute inset-0 scale-125"
+            aria-hidden="true"
+          />
+          <div className="relative overflow-hidden rounded-[2rem] border border-line bg-ink-1 shadow-2xl">
+            <Image
+              src="/images/hero-athlete-dark-studio.webp"
+              alt="An athlete mid-set in a dark studio gym, dramatic side lighting with a subtle coral rim light, shot on 35mm, moody, cinematic, near-black background"
+              width={900}
+              height={1100}
+              priority
+              sizes="(max-width: 768px) 90vw, 384px"
+              className="h-auto w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

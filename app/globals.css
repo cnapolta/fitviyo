@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   Fitviyo brand tokens (DESIGN.md / LANDING.md §2)
+   Dark theme. Text on coral = ink-0 (never white).
+   ───────────────────────────────────────────────────────────── */
+@theme {
+  --color-coral: #ff6044;
+  --color-ink-0: #0c0e11;
+  --color-ink-1: #14171c;
+  --color-ink-2: #1b1f26;
+  --color-line: #262b33;
+  --color-bone: #ede9e0;
+  --color-bone-60: #a6a199;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-brand: 1rem;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink-0);
+    color: var(--color-bone);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-bone);
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-coral);
+    color: var(--color-ink-0);
+  }
+
+  /* Visible, on-brand focus ring for keyboard users (a11y) */
+  :focus-visible {
+    outline: 2px solid var(--color-coral);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Coral radial glow used behind hero / CTAs */
+.coral-glow {
+  background: radial-gradient(
+    60% 60% at 50% 40%,
+    color-mix(in srgb, var(--color-coral) 28%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+/* Subtle top-to-bottom section separation */
+.hairline {
+  border-top: 1px solid var(--color-line);
+}
+
+/* Prose styling for /privacy and /terms */
+.legal h2 {
+  font-size: 1.375rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.legal h3 {
+  font-size: 1.125rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.legal p,
+.legal li {
+  color: var(--color-bone-60);
+  line-height: 1.7;
+  margin-bottom: 0.85rem;
+}
+.legal ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+.legal a {
+  color: var(--color-coral);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal strong {
+  color: var(--color-bone);
+}
