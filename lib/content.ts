@@ -30,22 +30,32 @@ export const features = [
   },
 ] as const;
 
-// Higgsfield atmospheric showcase (LANDING.md §7). Filenames + alt text carry
-// the prompt so finished assets can be dropped in /public/images and swapped.
+// Higgsfield atmospheric showcase, arranged as a bento mosaic. `span` maps to
+// grid spans in Showcase.tsx. Filenames + alt text carry the prompt so finished
+// assets can be dropped in /public/images and swapped.
 export const showcase = [
   {
+    src: "/images/showcase-lifts.webp",
+    alt: "A powerful athlete performing a heavy barbell deadlift in a dark studio gym with a dramatic coral rim light",
+    label: "Lifts",
+    span: "big" as const,
+  },
+  {
     src: "/images/showcase-running-dawn.webp",
-    alt: "A lone runner at dawn on an empty road, cool dark tones with a coral sunrise accent, sense of motion, cinematic, minimal",
+    alt: "A lone runner at dawn on an empty road, cool dark tones with a coral sunrise accent, sense of motion, cinematic",
     label: "Runs",
+    span: "wide" as const,
   },
   {
     src: "/images/showcase-food-highprotein.webp",
-    alt: "Clean overhead of a healthy high-protein meal on a dark stone surface, moody directional light, one small coral prop accent, editorial food photography",
+    alt: "Clean overhead of a healthy high-protein meal on a dark stone surface, moody directional light, editorial food photography",
     label: "Nutrition",
+    span: "small" as const,
   },
   {
     src: "/images/showcase-community-training.webp",
-    alt: "A diverse group training together in low light with a subtle coral rim light, cinematic, near-black background",
+    alt: "A diverse group of men and women training together in low light with a subtle coral rim light, cinematic",
     label: "Community",
+    span: "small" as const,
   },
 ] as const;

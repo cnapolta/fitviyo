@@ -1,6 +1,21 @@
 import Image from "next/image";
 import { showcase } from "@/lib/content";
 
+// Bento mosaic: on desktop a fixed-height 4-col / 2-row grid where each tile
+// fills its cell (md:h-full + object-cover) so nothing stretches or leaves
+// gaps. On mobile everything stacks in a clean single column.
+const spanClass: Record<string, string> = {
+  big: "md:col-span-2 md:row-span-2",
+  wide: "md:col-span-2",
+  small: "md:col-span-1",
+};
+
+const mobileAspect: Record<string, string> = {
+  big: "aspect-[4/5]",
+  wide: "aspect-[16/10]",
+  small: "aspect-[4/3]",
+};
+
 export function Showcase() {
   return (
     <section className="hairline bg-ink-1" aria-labelledby="showcase-heading">
@@ -18,16 +33,14 @@ export function Showcase() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {showcase.map((img, i) => (
+        <div className="grid grid-cols-1 gap-4 md:h-[600px] md:grid-cols-4 md:grid-rows-2">
+          {showcase.map((img) => (
             <figure
               key={img.src}
-              className={`group relative overflow-hidden rounded-brand border border-line bg-ink-2 ${
-                i === 0 ? "md:col-span-2 md:row-span-2" : ""
-              }`}
+              className={`group relative overflow-hidden rounded-brand border border-line bg-ink-2 ${spanClass[img.span]}`}
             >
               <div
-                className={`relative w-full ${i === 0 ? "aspect-[16/12] md:aspect-auto md:h-full" : "aspect-[3/2]"}`}
+                className={`relative w-full ${mobileAspect[img.span]} md:aspect-auto md:h-full`}
               >
                 <Image
                   src={img.src}
@@ -35,9 +48,9 @@ export function Showcase() {
                   fill
                   loading="lazy"
                   sizes={
-                    i === 0
-                      ? "(max-width: 768px) 90vw, 640px"
-                      : "(max-width: 768px) 90vw, 320px"
+                    img.span === "small"
+                      ? "(max-width: 768px) 90vw, 280px"
+                      : "(max-width: 768px) 90vw, 560px"
                   }
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
