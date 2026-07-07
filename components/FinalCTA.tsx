@@ -15,8 +15,8 @@ export function FinalCTA() {
           Be first.
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-lg text-bone-60">
-          Join the waitlist for early access and lifetime founder pricing. No
-          spam — just a heads-up when we launch.
+          Join the waitlist for early access. No spam — just a heads-up when we
+          launch.
         </p>
         <div className="mx-auto mt-8 max-w-xl">
           <WaitlistForm />

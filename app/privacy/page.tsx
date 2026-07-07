@@ -67,7 +67,7 @@ export default function PrivacyPage() {
       <h2>How we use information</h2>
       <ul>
         <li>To let you know when Fitviyo launches and to deliver early access.</li>
-        <li>To provide founder pricing to waitlist members.</li>
+        <li>To give waitlist members early access before the public launch.</li>
         <li>To operate, secure, and improve our website and app.</li>
       </ul>
 

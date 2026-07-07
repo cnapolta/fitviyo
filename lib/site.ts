@@ -10,7 +10,7 @@ export const site = {
   email: "hello@fitviyo.com",
   title: "Fitviyo — Train on your terms | Workout & nutrition tracker",
   description:
-    "The private, beautiful workout & nutrition tracker built for people who actually lift. No clutter, no guilt, no ads. Join the waitlist for early access and founder pricing.",
+    "The private, beautiful workout & nutrition tracker built for people who actually lift. No clutter, no guilt, no ads. Join the waitlist for early access.",
   themeColor: "#0C0E11",
   ogImage: "/og-image.png",
   // Update the handle when the founder confirms it.

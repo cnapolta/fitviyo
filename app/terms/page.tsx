@@ -21,10 +21,10 @@ export default function TermsPage() {
 
       <h2>The waitlist</h2>
       <p>
-        Joining the waitlist reserves your spot for early access and founder
-        pricing when Fitviyo launches. It is not a purchase and creates no
-        obligation on your part. Founder pricing, early-access timing, and
-        features are described in good faith but may change before launch.
+        Joining the waitlist reserves your spot for early access when Fitviyo
+        launches. It is not a purchase and creates no obligation on your part.
+        Early-access timing and features are described in good faith but may
+        change before launch.
       </p>
 
       <h2>Acceptable use</h2>

@@ -57,7 +57,7 @@ async function sendConfirmation(email: string) {
       "",
       "Thanks for joining the Fitviyo waitlist — the private, beautiful workout & nutrition tracker built for people who actually lift.",
       "",
-      "We'll email you the moment early access opens, and you'll lock in lifetime founder pricing.",
+      "We'll email you the moment early access opens — you'll be among the very first in.",
       "",
       "Train on your terms,",
       "— The Fitviyo team",
@@ -80,7 +80,7 @@ function confirmationHtml() {
             Thanks for joining the Fitviyo waitlist — the private, beautiful workout &amp; nutrition tracker built for people who actually lift.
           </p>
           <p style="margin:0 0 24px;font-size:15px;line-height:1.6;color:#A6A199">
-            We&rsquo;ll email you the moment early access opens, and you&rsquo;ll lock in <strong style="color:#EDE9E0">lifetime founder pricing</strong>.
+            We&rsquo;ll email you the moment early access opens &mdash; you&rsquo;ll be among the <strong style="color:#EDE9E0">very first in</strong>.
           </p>
           <p style="margin:0;font-size:15px;color:#A6A199">Train on your terms,<br/>&mdash; The Fitviyo team</p>
         </td></tr>
@@ -95,8 +95,6 @@ export async function POST(req: Request) {
   let payload: {
     id?: string;
     email?: string;
-    refCode?: string;
-    referrer?: string | null;
     company?: string;
     turnstileToken?: string;
   };
@@ -107,7 +105,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  const { id, email, refCode, referrer, company, turnstileToken } = payload;
+  const { id, email, company, turnstileToken } = payload;
 
   // 1. Honeypot — bots fill this hidden field.
   if (company && company.trim() !== "") {
@@ -161,8 +159,6 @@ export async function POST(req: Request) {
         ? id
         : crypto.randomUUID(), // client UUID, fall back server-side
     email: cleanEmail,
-    referrer: referrer || null,
-    ref_code: refCode || null,
     confirmed: false,
   };
 

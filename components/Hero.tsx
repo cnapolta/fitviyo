@@ -21,7 +21,7 @@ export function Hero() {
           <p className="mt-6 max-w-xl text-lg text-bone-60">
             Fitviyo is the private, beautiful workout and nutrition tracker built
             for people who actually lift — no clutter, no guilt, no ads. Join the
-            waitlist for early access and founder pricing.
+            waitlist for early access.
           </p>
 
           <div className="mt-8 max-w-xl">

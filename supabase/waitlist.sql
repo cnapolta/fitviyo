@@ -2,11 +2,18 @@
 -- Fitviyo — waitlist table + RLS (TECH.md §4, LANDING.md §5)
 -- Run this in the Supabase SQL editor.
 --
--- Security model: RLS allows the anon role to INSERT only. There is NO
--- SELECT policy, so nobody (not even with the anon key) can read/harvest
--- emails. The landing API route inserts with the anon key, gated behind
--- Cloudflare Turnstile + honeypot + IP rate-limiting.
+-- Waitlist only — no referral. Security model: RLS allows the anon role to
+-- INSERT only. There is NO SELECT policy, so nobody (not even with the anon
+-- key) can read/harvest emails. The landing API route inserts with the anon
+-- key, gated behind Cloudflare Turnstile + honeypot + IP rate-limiting.
 -- ─────────────────────────────────────────────────────────────
+
+-- ── If you already created the table WITH referral columns, run this once
+--    to drop them (safe to run even if they don't exist):
+alter table if exists public.waitlist
+  drop column if exists ref_code,
+  drop column if exists referrer,
+  drop column if exists position;
 
 -- Case-insensitive email type (so Foo@x.com == foo@x.com for uniqueness).
 create extension if not exists citext;
@@ -14,9 +21,6 @@ create extension if not exists citext;
 create table if not exists public.waitlist (
   id          uuid primary key default gen_random_uuid(), -- client-generated UUID
   email       citext not null unique,
-  referrer    text,                 -- ref_code of the inviter, if any
-  ref_code    text unique,          -- this signup's own shareable code
-  position    bigint,               -- optional queue position (fill later)
   confirmed   boolean not null default false,
   created_at  timestamptz not null default now(),
   updated_at  timestamptz not null default now()

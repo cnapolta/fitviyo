@@ -8,8 +8,8 @@ const reasons = [
   },
   {
     icon: TagIcon,
-    title: "Founder pricing",
-    body: "Lock in lifetime founder pricing on Pro — the best rate Fitviyo will ever offer.",
+    title: "Founding-member perks",
+    body: "Get exclusive founding-member perks reserved for the people who join before launch.",
   },
   {
     icon: CompassIcon,
@@ -30,7 +30,7 @@ export function WhyJoin() {
             Why join now
           </h2>
           <p className="mt-4 text-lg text-bone-60">
-            Founding members get early access, lifetime founder pricing, and a say
+            Founding members get early access, founding-member perks, and a say
             in what we build next.
           </p>
         </div>
