@@ -9,7 +9,7 @@ const reasons = [
   {
     icon: TagIcon,
     title: "Founding-member perks",
-    body: "Get exclusive founding-member perks reserved for the people who join before launch.",
+    body: "A few extras for the people who join before we launch.",
   },
   {
     icon: CompassIcon,

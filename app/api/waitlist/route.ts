@@ -74,7 +74,7 @@ function confirmationHtml() {
     <tr><td align="center">
       <table role="presentation" width="100%" style="max-width:480px;background:#14171C;border:1px solid #262B33;border-radius:16px;padding:32px">
         <tr><td>
-          <p style="margin:0 0 4px;font-size:22px;font-weight:700;color:#EDE9E0">Fitviyo<span style="color:#FF6044">.</span></p>
+          <p style="margin:0 0 4px;font-size:22px;font-weight:700;color:#EDE9E0">Fitviyo</p>
           <h1 style="margin:16px 0 8px;font-size:26px;color:#EDE9E0">You&rsquo;re on the list.</h1>
           <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#A6A199">
             Thanks for joining the Fitviyo waitlist, the private, beautiful workout &amp; nutrition tracker built for people who actually lift.
