@@ -7,7 +7,3 @@ import { track } from "@vercel/analytics";
 export function trackWaitlistSubmit() {
   track("waitlist_submit");
 }
-
-export function trackShareClick(channel: string) {
-  track("share_click", { channel });
-}

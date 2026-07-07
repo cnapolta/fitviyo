@@ -1,32 +1,23 @@
 "use client";
 
-import { useId, useRef, useState } from "react";
+import { useId, useState } from "react";
 import Script from "next/script";
-import { trackShareClick, trackWaitlistSubmit } from "@/lib/analytics";
+import { trackWaitlistSubmit } from "@/lib/analytics";
 import { CheckIcon, ArrowRightIcon } from "@/components/icons";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
-function shortCode(uuid: string) {
-  return uuid.replace(/-/g, "").slice(0, 8);
-}
-
 export function WaitlistForm({
   id,
-  variant = "default",
 }: {
   id?: string;
-  variant?: "default" | "compact";
 }) {
   const emailId = useId();
   const [status, setStatus] = useState<Status>("idle");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [shareUrl, setShareUrl] = useState("");
-  const [copied, setCopied] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -37,8 +28,7 @@ export function WaitlistForm({
 
     // Honeypot — real users never fill this.
     if ((data.get("company") as string)?.trim()) {
-      // Silently pretend success for bots.
-      setStatus("success");
+      setStatus("success"); // silently pretend success for bots
       return;
     }
 
@@ -49,13 +39,10 @@ export function WaitlistForm({
       return;
     }
 
-    const id =
+    const rowId =
       typeof crypto !== "undefined" && crypto.randomUUID
         ? crypto.randomUUID()
         : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-    const refCode = shortCode(id);
-    const referrer =
-      new URLSearchParams(window.location.search).get("ref") || null;
 
     setStatus("loading");
     setMessage("");
@@ -65,32 +52,25 @@ export function WaitlistForm({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          id,
+          id: rowId,
           email,
-          refCode,
-          referrer,
           company: "", // honeypot placeholder
           turnstileToken,
         }),
       });
 
-      const body = (await res.json().catch(() => ({}))) as {
-        error?: string;
-      };
+      const body = (await res.json().catch(() => ({}))) as { error?: string };
 
       if (!res.ok) {
         setStatus("error");
         setMessage(
           body.error || "Something went wrong. Please try again in a moment.",
         );
-        // Reset Turnstile so the user can retry.
         window.turnstile?.reset?.();
         return;
       }
 
       trackWaitlistSubmit();
-      const url = `${window.location.origin}/?ref=${refCode}`;
-      setShareUrl(url);
       setStatus("success");
     } catch {
       setStatus("error");
@@ -99,82 +79,30 @@ export function WaitlistForm({
     }
   }
 
-  async function copyShare() {
-    try {
-      await navigator.clipboard.writeText(shareUrl);
-      setCopied(true);
-      trackShareClick("copy");
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      /* clipboard unavailable — ignore */
-    }
-  }
-
   if (status === "success") {
-    const shareText = encodeURIComponent(
-      "I just joined the Fitviyo waitlist — the private, beautiful workout & nutrition tracker for people who lift.",
-    );
     return (
       <div
-        className="w-full rounded-brand border border-line bg-ink-1 p-6 text-left"
+        className="flex w-full items-center gap-3 rounded-brand border border-line bg-ink-1 p-5 text-left"
         role="status"
         aria-live="polite"
       >
-        <div className="mb-3 flex items-center gap-2 text-coral">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-coral text-ink-0">
-            <CheckIcon width={18} height={18} strokeWidth={2.2} />
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-coral text-ink-0">
+          <CheckIcon width={20} height={20} strokeWidth={2.2} />
+        </span>
+        <p className="text-bone">
+          <span className="font-display font-semibold">
+            You&apos;re on the list. 🎉
+          </span>{" "}
+          <span className="text-bone-60">
+            Check your inbox — we&apos;ll be in touch.
           </span>
-          <span className="font-display text-lg font-semibold text-bone">
-            You&apos;re on the list 🎉
-          </span>
-        </div>
-        <p className="text-bone-60">
-          Check your inbox — we&apos;ll be in touch. Want to move up? Share your
-          link:
         </p>
-        <div className="mt-4 flex flex-col gap-2 sm:flex-row">
-          <input
-            readOnly
-            value={shareUrl}
-            aria-label="Your referral link"
-            className="min-w-0 flex-1 truncate rounded-lg border border-line bg-ink-2 px-3 py-2 text-sm text-bone-60"
-            onFocus={(e) => e.currentTarget.select()}
-          />
-          <button
-            type="button"
-            onClick={copyShare}
-            className="shrink-0 rounded-lg bg-coral px-4 py-2 text-sm font-semibold text-ink-0 transition-opacity hover:opacity-90"
-          >
-            {copied ? "Copied!" : "Copy link"}
-          </button>
-        </div>
-        <div className="mt-3 flex gap-4 text-sm text-bone-60">
-          <a
-            className="underline decoration-line underline-offset-4 hover:text-bone"
-            href={`https://x.com/intent/tweet?text=${shareText}&url=${encodeURIComponent(shareUrl)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackShareClick("x")}
-          >
-            Share on X
-          </a>
-          <a
-            className="underline decoration-line underline-offset-4 hover:text-bone"
-            href={`https://wa.me/?text=${shareText}%20${encodeURIComponent(shareUrl)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackShareClick("whatsapp")}
-          >
-            Share on WhatsApp
-          </a>
-        </div>
       </div>
     );
   }
 
   return (
     <form
-      ref={formRef}
       id={id}
       onSubmit={onSubmit}
       noValidate
