@@ -5,16 +5,6 @@ import { WaitlistCount } from "@/components/WaitlistCount";
 export function Hero() {
   return (
     <section className="relative overflow-hidden" aria-labelledby="hero-heading">
-      {/* Teaser top strip (LANDING.md §4) */}
-      <div className="border-b border-line/70 bg-ink-1">
-        <p className="mx-auto max-w-6xl px-5 py-2.5 text-center text-sm text-bone-60">
-          Something&apos;s coming for people who lift.{" "}
-          <span className="text-coral" aria-hidden="true">
-            →
-          </span>
-        </p>
-      </div>
-
       <div
         className="coral-glow pointer-events-none absolute inset-x-0 top-0 h-[600px]"
         aria-hidden="true"
@@ -38,7 +28,7 @@ export function Hero() {
             <WaitlistForm id="join" />
           </div>
 
-          <div className="mt-6">
+          <div className="mt-8">
             <WaitlistCount />
           </div>
         </div>

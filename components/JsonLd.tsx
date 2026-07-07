@@ -1,7 +1,6 @@
 import { site, SITE_URL, sameAs } from "@/lib/site";
-import { faqs } from "@/lib/content";
 
-// Structured data: SoftwareApplication + Organization + FAQPage (LANDING.md §6).
+// Structured data: SoftwareApplication + Organization.
 // Rendered server-side as a single <script type="application/ld+json">.
 export function JsonLd() {
   const graph = {
@@ -29,24 +28,6 @@ export function JsonLd() {
         description: site.description,
         url: SITE_URL,
         publisher: { "@id": `${SITE_URL}/#organization` },
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
-          description: "Freemium — free core app with an optional Pro tier and a 7-day free trial.",
-        },
-      },
-      {
-        "@type": "FAQPage",
-        "@id": `${SITE_URL}/#faq`,
-        mainEntity: faqs.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: f.a,
-          },
-        })),
       },
     ],
   };

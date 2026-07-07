@@ -13,11 +13,9 @@ export const site = {
     "The private, beautiful workout & nutrition tracker built for people who actually lift. No clutter, no guilt, no ads. Join the waitlist for early access and founder pricing.",
   themeColor: "#0C0E11",
   ogImage: "/og-image.png",
-  // Update these when the founder provides real handles.
+  // Update the handle when the founder confirms it.
   socials: {
     instagram: "https://instagram.com/fitviyo",
-    x: "https://x.com/fitviyo",
-    tiktok: "https://tiktok.com/@fitviyo",
   },
   // Baseline added to the live count. 0 = show the real signup count only.
   // Set to a positive number if you want a pre-seeded "social proof" figure.

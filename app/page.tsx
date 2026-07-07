@@ -4,7 +4,7 @@ import { Hook } from "@/components/Hook";
 import { FeatureTrio } from "@/components/FeatureTrio";
 import { Showcase } from "@/components/Showcase";
 import { WhyJoin } from "@/components/WhyJoin";
-import { FAQ } from "@/components/FAQ";
+import { Contact } from "@/components/Contact";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
@@ -20,7 +20,7 @@ export default function Home() {
         <FeatureTrio />
         <Showcase />
         <WhyJoin />
-        <FAQ />
+        <Contact />
         <FinalCTA />
       </main>
       <Footer />

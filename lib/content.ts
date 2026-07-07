@@ -1,28 +1,4 @@
-// Shared page content. FAQ is reused by both the FAQ section and the
-// FAQPage JSON-LD so the structured data always matches what's on screen.
-
-export const faqs = [
-  {
-    q: "When does Fitviyo launch?",
-    a: "We're in the final stretch. Join the waitlist and you'll be the first to know the moment it ships — waitlist members get in before anyone else.",
-  },
-  {
-    q: "What platforms will it be on?",
-    a: "iOS first. We're building a beautiful, native-feeling iPhone app and want it perfect before we expand. Android is on the roadmap.",
-  },
-  {
-    q: "How much will it cost?",
-    a: "Fitviyo is freemium — the core tracker is free, with an optional Pro tier that unlocks the full experience. Pro starts with a 7-day free trial, and waitlist founders lock in lifetime founder pricing.",
-  },
-  {
-    q: "Is my data private?",
-    a: "Yes. Fitviyo is local-first: your training and nutrition data lives on your device and stays yours. No ads, no data selling, no creepy tracking — ever.",
-  },
-  {
-    q: "What makes Fitviyo different?",
-    a: "No bloat and no guilt. You build your own workouts, log food and runs in seconds, and share your training with a community that actually lifts — in an app that gets out of your way.",
-  },
-] as const;
+// Shared page content.
 
 export const features = [
   {

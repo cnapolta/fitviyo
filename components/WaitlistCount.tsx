@@ -1,55 +1,84 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { site } from "@/lib/site";
 
-// Live social-proof line. Shows the real signup count (waitlistBaseCount +
-// actual rows from the waitlist_count() RPC). When the count is 0 it shows a
-// "be first" message instead of an empty "0+ joined". Container keeps a stable
-// height so the async update doesn't cause layout shift.
+// Live social-proof figure. Fetches the real signup count, then animates a
+// quick count-up from 0 → total. At 0 it shows a "be first" line instead of
+// "0+". Reserves a stable height so the async update doesn't shift layout.
 export function WaitlistCount() {
-  const [count, setCount] = useState<number>(site.waitlistBaseCount);
+  const [target, setTarget] = useState<number | null>(null); // null = loading
+  const [display, setDisplay] = useState(0);
+  const rafRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     let active = true;
     fetch("/api/waitlist/count")
       .then((r) => r.json())
       .then((d: { count: number | null }) => {
-        if (active && typeof d.count === "number") {
-          setCount(site.waitlistBaseCount + d.count);
-        }
+        if (!active) return;
+        setTarget(site.waitlistBaseCount + (typeof d.count === "number" ? d.count : 0));
       })
       .catch(() => {
-        /* keep current value */
+        if (active) setTarget(site.waitlistBaseCount);
       });
     return () => {
       active = false;
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []);
 
+  useEffect(() => {
+    if (target === null || target <= 0) return;
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setDisplay(target);
+      return;
+    }
+    const duration = 900;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+      setDisplay(Math.round(eased * target));
+      if (t < 1) rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [target]);
+
+  // Loading — reserve height, render nothing.
+  if (target === null) {
+    return <div className="min-h-[58px]" aria-hidden="true" />;
+  }
+
+  // No signups yet.
+  if (target <= 0) {
+    return (
+      <p className="flex min-h-[58px] items-center text-base text-bone-60">
+        Be one of the first to join.
+      </p>
+    );
+  }
+
   return (
-    <div className="flex min-h-6 items-center gap-3 text-sm text-bone-60">
-      {count > 0 && (
-        <div className="flex -space-x-2" aria-hidden="true">
-          {["bg-coral", "bg-bone-60", "bg-line", "bg-coral"].map((c, i) => (
-            <span
-              key={i}
-              className={`h-6 w-6 rounded-full border border-ink-0 ${c}`}
-            />
-          ))}
-        </div>
-      )}
-      <span>
-        {count > 0 ? (
-          <>
-            <strong className="text-bone">
-              {count.toLocaleString("en-US")}+
-            </strong>{" "}
-            already joined
-          </>
-        ) : (
-          "Be one of the first to join."
-        )}
+    <div
+      className="flex min-h-[58px] items-center gap-3"
+      role="img"
+      aria-label={`${target.toLocaleString("en-US")}+ people already joined the waitlist`}
+    >
+      <span
+        aria-hidden="true"
+        className="font-display text-5xl font-extrabold leading-none tracking-tight text-coral tabular-nums"
+      >
+        {display.toLocaleString("en-US")}+
+      </span>
+      <span aria-hidden="true" className="text-sm leading-tight text-bone-60">
+        people already
+        <br />
+        joined the waitlist
       </span>
     </div>
   );

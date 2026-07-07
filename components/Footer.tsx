@@ -45,22 +45,6 @@ export function Footer() {
             >
               Instagram
             </a>
-            <a
-              href={site.socials.x}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-bone-60 hover:text-bone"
-            >
-              X
-            </a>
-            <a
-              href={site.socials.tiktok}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-bone-60 hover:text-bone"
-            >
-              TikTok
-            </a>
           </nav>
         </div>
 
