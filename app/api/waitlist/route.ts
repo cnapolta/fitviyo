@@ -67,23 +67,40 @@ async function sendConfirmation(email: string) {
 }
 
 function confirmationHtml() {
-  return `<!doctype html><html><body style="margin:0;background:#0C0E11;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#EDE9E0">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0C0E11;padding:32px 16px">
-    <tr><td align="center">
-      <table role="presentation" width="100%" style="max-width:480px;background:#14171C;border:1px solid #262B33;border-radius:16px;padding:32px">
-        <tr><td>
+  const logo = `${site.url}/logo.png`;
+  // No background: the email inherits the client's own light/dark surface.
+  // Text colors adapt via prefers-color-scheme; inline colors are the
+  // light-mode fallback for clients that drop the <style> block. The logo is
+  // the real brand image so its colors always render correctly.
+  return `<!doctype html><html><head>
+  <meta charset="utf-8">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <style>
+    body { margin:0; padding:0; background:transparent; }
+    @media (prefers-color-scheme: dark) {
+      .fv-strong { color:#EDE9E0 !important; }
+      .fv-muted { color:#A6A199 !important; }
+    }
+  </style>
+  </head>
+  <body>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:transparent">
+    <tr><td align="center" style="padding:28px 20px">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:460px">
+        <tr><td style="font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
           <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-            <td style="width:40px;height:40px;background:#FF6044;border-radius:10px;text-align:center;font-size:24px;font-weight:800;color:#0C0E11;font-family:Arial,sans-serif">F</td>
-            <td style="padding-left:10px;font-size:20px;font-weight:700;color:#EDE9E0">Fitviyo</td>
+            <td><img src="${logo}" alt="Fitviyo" width="40" height="40" style="display:block;border-radius:10px"></td>
+            <td class="fv-strong" style="padding-left:10px;font-size:20px;font-weight:700;color:#14171C">Fitviyo</td>
           </tr></table>
-          <h1 style="margin:22px 0 10px;font-size:26px;color:#EDE9E0">You&rsquo;re on the list.</h1>
-          <p style="margin:0 0 24px;font-size:15px;line-height:1.6;color:#A6A199">
+          <h1 class="fv-strong" style="margin:22px 0 10px;font-size:26px;font-weight:800;color:#14171C">You&rsquo;re on the list.</h1>
+          <p class="fv-muted" style="margin:0 0 22px;font-size:15px;line-height:1.6;color:#5b6470">
             Thanks for joining the Fitviyo waitlist. We&rsquo;ll email you the moment early access opens.
           </p>
-          <p style="margin:0;font-size:15px;color:#A6A199">Train on your terms,<br/>The Fitviyo team</p>
+          <p class="fv-muted" style="margin:0 0 26px;font-size:15px;line-height:1.6;color:#5b6470">Train on your terms,<br/>The Fitviyo team</p>
+          <p class="fv-muted" style="margin:0;font-size:12px;color:#8a929c">© 2026 Fitviyo · <a href="https://fitviyo.com" style="color:#FF6044;text-decoration:none">fitviyo.com</a></p>
         </td></tr>
       </table>
-      <p style="margin:16px 0 0;font-size:12px;color:#A6A199">© 2026 Fitviyo · <a href="https://fitviyo.com" style="color:#FF6044;text-decoration:none">fitviyo.com</a></p>
     </td></tr>
   </table>
   </body></html>`;
