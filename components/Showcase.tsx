@@ -27,7 +27,7 @@ export function Showcase() {
               }`}
             >
               <div
-                className={`relative w-full ${i === 0 ? "aspect-[16/12]" : "aspect-[16/10]"}`}
+                className={`relative w-full ${i === 0 ? "aspect-[16/12]" : "aspect-[3/2]"}`}
               >
                 <Image
                   src={img.src}

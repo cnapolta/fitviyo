@@ -25,7 +25,7 @@ export const features = [
     icon: "share",
     img: {
       src: "/images/feature-share-discover.webp",
-      alt: "A man and a woman training together and motivating each other in a dark gym with a coral rim light",
+      alt: "A diverse group of athletes celebrating together in a dark gym with a coral rim light",
     },
   },
 ] as const;
