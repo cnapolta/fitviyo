@@ -9,12 +9,12 @@ export function Hero() {
         className="coral-glow pointer-events-none absolute inset-x-0 top-0 h-[600px]"
         aria-hidden="true"
       />
-      {/* Very subtle light drifting in the dark, behind the content. */}
+      {/* A soft light drifting in the dark, behind the content. */}
       <div
-        className="hero-drift pointer-events-none absolute left-[12%] top-[22%] h-64 w-64 rounded-full blur-3xl"
+        className="hero-drift pointer-events-none absolute left-[18%] top-[38%] h-80 w-80 rounded-full blur-3xl"
         style={{
           background:
-            "radial-gradient(circle, color-mix(in srgb, var(--color-coral) 22%, transparent) 0%, transparent 70%)",
+            "radial-gradient(circle, color-mix(in srgb, var(--color-coral) 34%, transparent) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
