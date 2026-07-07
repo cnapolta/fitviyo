@@ -24,8 +24,7 @@ export function DumbbellIcon(props: SVGProps<SVGSVGElement>) {
 export function FlameIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base} {...props}>
-      <path d="M12 3c1 2.5 3.5 4 3.5 7a3.5 3.5 0 0 1-7 0c0-1 .3-1.8.8-2.5C9.9 9 12 8 12 3Z" />
-      <path d="M8.5 14.5a3.5 3.5 0 1 0 7 0c0-2.2-1.7-3.4-3.5-5.5-1.8 2.1-3.5 3.3-3.5 5.5Z" />
+      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
     </svg>
   );
 }

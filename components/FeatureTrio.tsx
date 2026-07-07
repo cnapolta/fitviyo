@@ -28,8 +28,8 @@ export function FeatureTrio() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-coral/12 text-coral">
-                    <Icon width={22} height={22} />
+                  <span className="mb-4 inline-flex h-13 w-13 items-center justify-center rounded-xl bg-coral/12 text-coral">
+                    <Icon width={28} height={28} strokeWidth={1.7} />
                   </span>
                   <h3 className="font-display text-xl font-semibold text-bone">
                     {f.title}
