@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Wordmark } from "@/components/Wordmark";
+import { Logo } from "@/components/Logo";
 import { Footer } from "@/components/Footer";
 
 export function LegalLayout({
@@ -16,7 +16,7 @@ export function LegalLayout({
       <header className="border-b border-line/70 bg-ink-0/80 backdrop-blur-md">
         <nav className="mx-auto flex h-16 max-w-3xl items-center justify-between px-5">
           <Link href="/" aria-label="Fitviyo home">
-            <Wordmark className="text-2xl" />
+            <Logo />
           </Link>
           <Link
             href="/"

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Wordmark } from "@/components/Wordmark";
+import { Logo } from "@/components/Logo";
 
 export function Nav() {
   return (
@@ -9,7 +9,7 @@ export function Nav() {
         aria-label="Primary"
       >
         <Link href="/" className="flex items-center" aria-label="Fitviyo home">
-          <Wordmark className="text-2xl" />
+          <Logo priority />
         </Link>
         <a
           href="#join"

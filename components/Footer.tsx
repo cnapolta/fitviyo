@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Wordmark } from "@/components/Wordmark";
+import { Logo } from "@/components/Logo";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-xs">
-            <Wordmark className="text-2xl" />
+            <Logo />
             <p className="mt-3 text-sm text-bone-60">
               The private, beautiful workout &amp; nutrition tracker for people
               who actually lift.

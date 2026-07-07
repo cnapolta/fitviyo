@@ -15,7 +15,7 @@ export function JsonLd() {
         email: site.email,
         logo: {
           "@type": "ImageObject",
-          url: `${SITE_URL}/icon.svg`,
+          url: `${SITE_URL}/logo.png`,
         },
         sameAs,
       },
