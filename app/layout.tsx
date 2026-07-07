@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
+    locale: "en_US",
     url: SITE_URL,
     siteName: site.name,
     title: site.title,
@@ -60,6 +61,9 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   category: "health",
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export const viewport: Viewport = {
