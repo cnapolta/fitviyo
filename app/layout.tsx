@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { bricolage, instrument } from "@/lib/fonts";
 import { site, SITE_URL } from "@/lib/site";
 import "./globals.css";
@@ -82,10 +83,11 @@ export default function RootLayout({
     <html lang="en" className={`${bricolage.variable} ${instrument.variable}`}>
       <body>
         {children}
-        {/* Vercel Analytics loads only on Vercel (the /_vercel/insights
-            script is served by the platform), keeping local/self-hosted
-            runs free of 404 console noise. */}
+        {/* Vercel Analytics + Speed Insights load only on Vercel (their
+            /_vercel/* scripts are served by the platform), keeping local /
+            self-hosted runs free of 404 console noise. */}
         {process.env.VERCEL && <Analytics />}
+        {process.env.VERCEL && <SpeedInsights />}
       </body>
     </html>
   );
