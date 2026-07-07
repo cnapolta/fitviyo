@@ -51,13 +51,11 @@ async function sendConfirmation(email: string) {
   await resend.emails.send({
     from: `Fitviyo <${site.email}>`,
     to: email,
-    subject: "You're on the Fitviyo waitlist.",
+    subject: "You're on the Fitviyo waitlist",
     text: [
-      "You're in.",
+      "You're on the list.",
       "",
-      "Thanks for joining the Fitviyo waitlist, the private, beautiful workout & nutrition tracker built for people who actually lift.",
-      "",
-      "We'll email you the moment early access opens, and you'll be among the very first in.",
+      "Thanks for joining the Fitviyo waitlist. We'll email you the moment early access opens.",
       "",
       "Train on your terms,",
       "The Fitviyo team",
@@ -74,13 +72,13 @@ function confirmationHtml() {
     <tr><td align="center">
       <table role="presentation" width="100%" style="max-width:480px;background:#14171C;border:1px solid #262B33;border-radius:16px;padding:32px">
         <tr><td>
-          <p style="margin:0 0 4px;font-size:22px;font-weight:700;color:#EDE9E0">Fitviyo</p>
-          <h1 style="margin:16px 0 8px;font-size:26px;color:#EDE9E0">You&rsquo;re on the list.</h1>
-          <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#A6A199">
-            Thanks for joining the Fitviyo waitlist, the private, beautiful workout &amp; nutrition tracker built for people who actually lift.
-          </p>
+          <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="width:40px;height:40px;background:#FF6044;border-radius:10px;text-align:center;font-size:24px;font-weight:800;color:#0C0E11;font-family:Arial,sans-serif">F</td>
+            <td style="padding-left:10px;font-size:20px;font-weight:700;color:#EDE9E0">Fitviyo</td>
+          </tr></table>
+          <h1 style="margin:22px 0 10px;font-size:26px;color:#EDE9E0">You&rsquo;re on the list.</h1>
           <p style="margin:0 0 24px;font-size:15px;line-height:1.6;color:#A6A199">
-            We&rsquo;ll email you the moment early access opens, and you&rsquo;ll be among the <strong style="color:#EDE9E0">very first in</strong>.
+            Thanks for joining the Fitviyo waitlist. We&rsquo;ll email you the moment early access opens.
           </p>
           <p style="margin:0;font-size:15px;color:#A6A199">Train on your terms,<br/>The Fitviyo team</p>
         </td></tr>
