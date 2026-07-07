@@ -10,17 +10,17 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24">
         <div className="relative">
           <h1
             id="hero-heading"
-            className="text-balance text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl"
+            className="text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
           >
             Train on your terms.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-bone-60">
             Fitviyo is the private, beautiful workout and nutrition tracker built
-            for people who actually lift — no clutter, no guilt, no ads. Join the
+            for people who actually lift. No clutter, no guilt, no ads. Join the
             waitlist for early access.
           </p>
 

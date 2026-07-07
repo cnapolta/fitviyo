@@ -9,7 +9,7 @@ export function FeatureTrio() {
         <h2 id="features-heading" className="sr-only">
           What Fitviyo does
         </h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {features.map((f) => {
             const Icon = featureIcons[f.icon];
             return (
@@ -17,7 +17,7 @@ export function FeatureTrio() {
                 key={f.title}
                 className="flex flex-col overflow-hidden rounded-brand border border-line bg-ink-1"
               >
-                <div className="relative aspect-[9/16] w-full overflow-hidden bg-ink-2">
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-ink-2">
                   <Image
                     src={f.img.src}
                     alt={f.img.alt}

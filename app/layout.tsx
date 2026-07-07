@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: site.ogImage,
         width: 1200,
         height: 630,
-        alt: "Fitviyo — Train on your terms. Workout & nutrition tracker for people who lift.",
+        alt: "Fitviyo: Train on your terms. Workout & nutrition tracker for people who lift.",
       },
     ],
   },

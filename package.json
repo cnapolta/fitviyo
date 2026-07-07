@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen:placeholders": "node scripts/gen-placeholders.mjs",
-    "gen:screens": "node scripts/gen-app-screens.mjs"
+    "gen:placeholders": "node scripts/gen-placeholders.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",

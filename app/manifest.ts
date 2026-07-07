@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Fitviyo — Workout & nutrition tracker",
+    name: "Fitviyo: Workout & nutrition tracker",
     short_name: "Fitviyo",
     description: site.description,
     start_url: "/",

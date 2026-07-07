@@ -35,7 +35,7 @@ export function WhyJoin() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {reasons.map((r) => (
             <div
               key={r.title}

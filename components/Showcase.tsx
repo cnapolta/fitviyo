@@ -13,12 +13,12 @@ export function Showcase() {
             Built for the way you actually train.
           </h2>
           <p className="mt-4 text-lg text-bone-60">
-            Lifts, runs, meals, and a community that gets it — in one dark,
+            Lifts, runs, meals, and a community that gets it, all in one dark,
             distraction-free app.
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {showcase.map((img, i) => (
             <figure
               key={img.src}

@@ -94,7 +94,7 @@ export function WaitlistForm({
             You&apos;re on the list. 🎉
           </span>{" "}
           <span className="text-bone-60">
-            Check your inbox — we&apos;ll be in touch.
+            Check your inbox. We&apos;ll be in touch.
           </span>
         </p>
       </div>
@@ -136,7 +136,7 @@ export function WaitlistForm({
           />
         </div>
 
-        {/* Honeypot — visually hidden, off the a11y tree, not tab-focusable. */}
+        {/* Honeypot: visually hidden, off the a11y tree, not tab-focusable. */}
         <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px]">
           <label htmlFor={`${emailId}-company`}>Company</label>
           <input

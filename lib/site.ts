@@ -8,7 +8,7 @@ export const site = {
   domain: "fitviyo.com",
   url: SITE_URL,
   email: "hello@fitviyo.com",
-  title: "Fitviyo — Train on your terms | Workout & nutrition tracker",
+  title: "Fitviyo: Train on your terms | Workout & nutrition tracker",
   description:
     "The private, beautiful workout & nutrition tracker built for people who actually lift. No clutter, no guilt, no ads. Join the waitlist for early access.",
   themeColor: "#0C0E11",

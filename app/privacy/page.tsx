@@ -73,9 +73,9 @@ export default function PrivacyPage() {
 
       <h2>Sharing</h2>
       <p>
-        We share data only with the service providers that make Fitviyo work —
+        We share data only with the service providers that make Fitviyo work:
         Supabase (storage), Resend (email), Cloudflare (bot protection), and
-        Vercel (hosting and anonymous analytics) — and only as needed to provide
+        Vercel (hosting and anonymous analytics), and only as needed to provide
         the service. We do not sell your personal information.
       </p>
 

@@ -40,7 +40,7 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
 async function sendConfirmation(email: string) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.warn("[waitlist] RESEND_API_KEY not set — skipping confirmation email");
+    console.warn("[waitlist] RESEND_API_KEY not set, skipping confirmation email");
     return;
   }
 
@@ -55,12 +55,12 @@ async function sendConfirmation(email: string) {
     text: [
       "You're in.",
       "",
-      "Thanks for joining the Fitviyo waitlist — the private, beautiful workout & nutrition tracker built for people who actually lift.",
+      "Thanks for joining the Fitviyo waitlist, the private, beautiful workout & nutrition tracker built for people who actually lift.",
       "",
-      "We'll email you the moment early access opens — you'll be among the very first in.",
+      "We'll email you the moment early access opens, and you'll be among the very first in.",
       "",
       "Train on your terms,",
-      "— The Fitviyo team",
+      "The Fitviyo team",
       "",
       "fitviyo.com",
     ].join("\n"),
@@ -77,12 +77,12 @@ function confirmationHtml() {
           <p style="margin:0 0 4px;font-size:22px;font-weight:700;color:#EDE9E0">Fitviyo<span style="color:#FF6044">.</span></p>
           <h1 style="margin:16px 0 8px;font-size:26px;color:#EDE9E0">You&rsquo;re on the list.</h1>
           <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#A6A199">
-            Thanks for joining the Fitviyo waitlist — the private, beautiful workout &amp; nutrition tracker built for people who actually lift.
+            Thanks for joining the Fitviyo waitlist, the private, beautiful workout &amp; nutrition tracker built for people who actually lift.
           </p>
           <p style="margin:0 0 24px;font-size:15px;line-height:1.6;color:#A6A199">
-            We&rsquo;ll email you the moment early access opens &mdash; you&rsquo;ll be among the <strong style="color:#EDE9E0">very first in</strong>.
+            We&rsquo;ll email you the moment early access opens, and you&rsquo;ll be among the <strong style="color:#EDE9E0">very first in</strong>.
           </p>
-          <p style="margin:0;font-size:15px;color:#A6A199">Train on your terms,<br/>&mdash; The Fitviyo team</p>
+          <p style="margin:0;font-size:15px;color:#A6A199">Train on your terms,<br/>The Fitviyo team</p>
         </td></tr>
       </table>
       <p style="margin:16px 0 0;font-size:12px;color:#A6A199">© 2026 Fitviyo · <a href="https://fitviyo.com" style="color:#FF6044;text-decoration:none">fitviyo.com</a></p>

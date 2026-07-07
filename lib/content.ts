@@ -7,7 +7,7 @@ export const features = [
     icon: "dumbbell",
     img: {
       src: "/images/feature-build-workouts.webp",
-      alt: "Fitviyo app screen showing a custom workout being built with a clean set-by-set player",
+      alt: "A focused athlete pressing a heavy barbell overhead in a dark studio gym with a coral rim light",
     },
   },
   {
@@ -16,7 +16,7 @@ export const features = [
     icon: "flame",
     img: {
       src: "/images/feature-track-nutrition.webp",
-      alt: "Fitviyo app screen showing calories, water, steps and runs logged for the day",
+      alt: "A healthy high-protein meal of grilled chicken, rice and greens beside a water bottle on a dark surface",
     },
   },
   {
@@ -25,7 +25,7 @@ export const features = [
     icon: "share",
     img: {
       src: "/images/feature-share-discover.webp",
-      alt: "Fitviyo app screen showing shareable workout cards from the community feed",
+      alt: "A man and a woman training together and motivating each other in a dark gym with a coral rim light",
     },
   },
 ] as const;
