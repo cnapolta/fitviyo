@@ -40,8 +40,8 @@ export function Hero() {
           />
           <div className="relative overflow-hidden rounded-[2rem] border border-line bg-ink-1 shadow-2xl">
             <Image
-              src="/images/hero-athlete-dark-studio.webp"
-              alt="An athlete mid-set in a dark studio gym, dramatic side lighting with a subtle coral rim light, shot on 35mm, moody, cinematic, near-black background"
+              src="/images/hero-runner-dawn.webp"
+              alt="A lone runner sprinting down an open road at dawn with a dramatic orange sunrise and warm coral light"
               width={900}
               height={1200}
               priority
