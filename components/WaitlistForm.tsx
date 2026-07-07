@@ -82,20 +82,27 @@ export function WaitlistForm({
   if (status === "success") {
     return (
       <div
-        className="flex w-full items-center gap-3 rounded-brand border border-line bg-ink-1 p-5 text-left"
+        className="w-full rounded-brand border border-line bg-ink-1 p-5 text-left"
         role="status"
         aria-live="polite"
       >
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-coral text-ink-0">
-          <CheckIcon width={20} height={20} strokeWidth={2.2} />
-        </span>
-        <p className="text-bone">
-          <span className="font-display font-semibold">
-            You&apos;re on the list. 🎉
-          </span>{" "}
-          <span className="text-bone-60">
-            Check your inbox. We&apos;ll be in touch.
+        <div className="flex items-center gap-3">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-coral text-ink-0">
+            <CheckIcon width={20} height={20} strokeWidth={2.2} />
           </span>
+          <p className="text-bone">
+            <span className="font-display font-semibold">
+              You&apos;re on the list. 🎉
+            </span>{" "}
+            <span className="text-bone-60">
+              We just sent you a confirmation email.
+            </span>
+          </p>
+        </div>
+        <p className="mt-3 rounded-xl border border-coral/40 bg-coral/10 px-3 py-2.5 text-sm text-bone">
+          <strong className="text-coral">Don&apos;t see it?</strong> Check your{" "}
+          <strong>spam</strong> or <strong>promotions</strong> folder and mark it
+          &ldquo;Not spam&rdquo; so you don&apos;t miss our launch email.
         </p>
       </div>
     );

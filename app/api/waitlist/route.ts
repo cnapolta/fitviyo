@@ -51,6 +51,11 @@ async function sendConfirmation(email: string) {
   await resend.emails.send({
     from: `Fitviyo <${site.email}>`,
     to: email,
+    replyTo: site.email,
+    headers: {
+      // Signals legitimacy to inbox providers and gives an easy opt-out.
+      "List-Unsubscribe": `<mailto:${site.email}?subject=unsubscribe>`,
+    },
     subject: "You're on the Fitviyo waitlist",
     text: [
       "You're on the list.",
