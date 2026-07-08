@@ -5,231 +5,215 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Fitviyo handles your data. Local-first and privacy-forward: your training data stays yours, no ads, no data selling.",
+    "How Fitviyo handles your data. Your data runs your account and shows your progress. No selling, no ads, no cross-app tracking.",
   alternates: { canonical: "/privacy" },
   robots: { index: true, follow: true },
 };
 
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="Privacy Policy" updated="July 7, 2026">
+    <LegalLayout title="Privacy Policy" updated="July 8, 2026">
       <p>
-        Fitviyo is built privacy-first. This policy explains what we collect on
-        this website and in the Fitviyo app, how we use it, who we share it
-        with, and the choices you have. If you have any questions, email us at{" "}
-        <a href={`mailto:${site.email}`}>{site.email}</a>.
+        Fitviyo (&ldquo;the app&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is a
+        workout and nutrition tracker for iOS, operated by Muharremcan Polat.
+        This policy explains what data the app collects, why, and what your
+        choices are. The short version: your data exists to run your account and
+        show you your own progress. We don&apos;t sell it, we don&apos;t use it
+        for advertising, and we don&apos;t track you across other apps or
+        websites.
+      </p>
+      <p>
+        Contact: <a href={`mailto:${site.email}`}>{site.email}</a>
       </p>
 
-      <h2>The short version</h2>
+      <h2>1. Data we collect</h2>
+
+      <h3>Account</h3>
       <ul>
         <li>
-          <strong>The app is local-first.</strong> Your workouts, food, runs,
-          and body data are stored on your device, and you can use Fitviyo fully
-          without an account.
+          <strong>Anonymous account.</strong> When you first open Fitviyo, we
+          create an anonymous account (a random user ID) so your data can sync.
+          No personal information is involved.
         </li>
         <li>
-          <strong>An account is optional.</strong> You only sign in (with Apple
-          or Google) if you want to sync across devices or use the community.
-        </li>
-        <li>
-          <strong>We do not sell your data</strong>, we do not run ads, and we do
-          not use ad-tracking SDKs.
-        </li>
-        <li>
-          <strong>Analytics are anonymous</strong> and contain no personal
-          identifiers.
+          <strong>Sign-in (optional).</strong> If you sign in with Apple or
+          Google, we receive your <strong>email address</strong> and, if you
+          share it, your <strong>name</strong>. Apple&apos;s &ldquo;Hide My
+          Email&rdquo; is fully supported. We use these only to identify your
+          account and never for marketing.
         </li>
       </ul>
 
-      <h2>Information we collect</h2>
-
-      <h3>Website waitlist</h3>
+      <h3>Fitness and nutrition data you enter</h3>
       <p>
-        When you join the waitlist, we collect your <strong>email address</strong>.
-        We use it only to tell you about early access and launch. We store it
-        with our infrastructure provider (Supabase) and send email through
-        Resend. We use Cloudflare Turnstile to block bots, which may process
-        limited technical data such as your IP address to verify that you are
-        human.
+        Workouts, exercises, sets, weights and reps, workout history, body weight
+        logs, water intake, and food logs (including foods you scan or search).
+        This is the core content of the app; it is stored against your user ID so
+        it can sync between your devices.
       </p>
 
-      <h3>Your account</h3>
+      <h3>Apple Health (HealthKit)</h3>
       <p>
-        If you choose to create an account, we use <strong>Sign in with Apple</strong>{" "}
-        or <strong>Google</strong>. We receive a unique identifier and, depending
-        on the provider and your choices, an email address. We do not use email
-        and password sign-in.
+        With your explicit permission, Fitviyo <strong>reads your daily step
+        count</strong> from Apple Health to show your movement toward your daily
+        goal. We never write to Apple Health.
+      </p>
+      <p>
+        Per Apple&apos;s HealthKit requirements:{" "}
+        <strong>
+          data obtained from HealthKit is never sold, never shared with third
+          parties for advertising, marketing, or data-mining purposes, and is
+          used solely to provide the app&apos;s fitness features.
+        </strong>{" "}
+        Step counts sync to your account (like your other fitness data) only so
+        they display consistently across your devices. You can revoke Health
+        access at any time in iOS Settings → Privacy → Health.
       </p>
 
-      <h3>Profile and fitness data</h3>
+      <h3>Purchases</h3>
       <p>
-        To make the app work, you may provide profile details (such as display
-        name, goal, experience level, training days, equipment, units, birth
-        year, sex, height, starting weight, and activity level) and the data you
-        log: workouts and sets, food entries, water, steps, and weight. Some of
-        this is <strong>health and fitness information</strong>, which we treat
-        with extra care. It stays on your device when you are signed out, and it
-        is stored under your account with row-level security when you sync, so
-        only you can access it.
-      </p>
-
-      <h3>Apple Health</h3>
-      <p>
-        If you grant permission, Fitviyo reads step data from Apple Health to
-        show it alongside your training. We only access what you allow, and you
-        can revoke this at any time in your device settings.
-      </p>
-
-      <h3>Subscriptions</h3>
-      <p>
-        If you subscribe to Fitviyo Pro, purchases are handled by the App Store
-        or Google Play and managed through RevenueCat. We receive your
-        subscription status (for example, whether Pro is active and when it
-        renews), not your full payment details, which stay with the app store.
+        If you subscribe to Fitviyo Pro, the purchase is processed by{" "}
+        <strong>Apple</strong> and managed through <strong>RevenueCat</strong>{" "}
+        (our subscription infrastructure). We receive your subscription status
+        (active/expired, product, expiry date) tied to your user ID. We never see
+        your payment details. Apple handles all billing.
       </p>
 
       <h3>Push notifications</h3>
       <p>
-        If you opt in, we use OneSignal to send reminders and updates. This
-        involves a device push token and an anonymous identifier tied to your
-        account. You can turn notifications off at any time in your device
-        settings.
+        If you enable workout reminders, <strong>OneSignal</strong> (our
+        notification provider) stores a push token for your device and your user
+        ID so we can deliver the reminders you asked for (training-day reminders,
+        streak nudges, subscription notices). Declining notification permission
+        disables this entirely.
       </p>
 
-      <h3>Analytics and diagnostics</h3>
+      <h3>Analytics</h3>
       <p>
-        We use privacy-friendly, anonymous analytics (Aptabase or PostHog for the
-        app, and Vercel Analytics for the website) to understand aggregate usage,
-        such as which features are used and whether the waitlist form was
-        submitted. These measurements contain no personal identifiers and are not
-        used to profile you. We use no advertising or cross-app tracking SDKs.
+        We use <strong>Aptabase</strong>, a privacy-first analytics service, to
+        understand which features are used (e.g. &ldquo;a workout was
+        completed&rdquo;, &ldquo;a food was logged&rdquo;). These events are{" "}
+        <strong>anonymous</strong>: they are not linked to your user ID, contain
+        no personal data and no content you&apos;ve entered, and Aptabase does
+        not track devices across apps.
       </p>
 
-      <h2>How we use information</h2>
-      <ul>
-        <li>To provide the app: logging, sync, community, and progress views.</li>
-        <li>To look up foods you search (see Food data below).</li>
-        <li>To manage your Fitviyo Pro subscription and unlock Pro features.</li>
-        <li>To send notifications you have opted into.</li>
-        <li>To keep the service secure and to fix and improve it.</li>
-        <li>To tell waitlist members about early access and launch.</li>
-      </ul>
-
-      <h2>Food data</h2>
-      <p>
-        Food search and barcode lookups are powered by the FatSecret Platform
-        API. Your searches are sent through our secure server to FatSecret to
-        return nutrition results. Fitviyo displays a &ldquo;Powered by
-        fatsecret&rdquo; attribution where required.
-      </p>
-
-      <h2>Legal bases (GDPR)</h2>
-      <p>
-        Where the GDPR applies, we rely on: your <strong>consent</strong> (for
-        waitlist email, push notifications, and Apple Health access);{" "}
-        <strong>performance of a contract</strong> (to provide your account and
-        subscription); and our <strong>legitimate interests</strong> (to keep the
-        service secure and to improve it using anonymous analytics).
-      </p>
-
-      <h2>Who we share data with</h2>
-      <p>
-        We share data only with the service providers that make Fitviyo work, and
-        only as needed to provide the service:
-      </p>
+      <h2>2. What we do NOT do</h2>
       <ul>
         <li>
-          <strong>Supabase</strong>: database, authentication, and storage.
+          We do <strong>not</strong> sell your data to anyone.
         </li>
         <li>
-          <strong>RevenueCat</strong> and the <strong>App Store / Google Play</strong>:
-          subscription management and billing.
+          We do <strong>not</strong> use your data for advertising, and there are
+          no third-party ad networks in the app.
         </li>
         <li>
-          <strong>OneSignal</strong>: push notification delivery.
+          We do <strong>not</strong> track you across other companies&apos; apps
+          or websites (no App Tracking Transparency prompt is shown because no
+          tracking occurs).
         </li>
         <li>
-          <strong>FatSecret</strong>: food and nutrition lookups.
-        </li>
-        <li>
-          <strong>Apple</strong> and <strong>Google</strong>: sign-in.
-        </li>
-        <li>
-          <strong>Aptabase / PostHog</strong> and <strong>Vercel</strong>:
-          anonymous analytics and website hosting.
-        </li>
-        <li>
-          <strong>Resend</strong> and <strong>Cloudflare</strong>: email delivery
-          and bot protection for the website.
+          We do <strong>not</strong> use Apple Health data for anything other
+          than showing you your own steps.
         </li>
       </ul>
+
+      <h2>3. Who processes data on our behalf</h2>
+      <div style={{ overflowX: "auto" }}>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Role</th>
+              <th>Data involved</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Supabase</td>
+              <td>Database &amp; authentication (backend)</td>
+              <td>Account, fitness/nutrition data</td>
+            </tr>
+            <tr>
+              <td>Apple / RevenueCat</td>
+              <td>Subscription billing &amp; entitlement</td>
+              <td>Purchase status, user ID</td>
+            </tr>
+            <tr>
+              <td>OneSignal</td>
+              <td>Push notification delivery</td>
+              <td>Push token, user ID, reminder preferences</td>
+            </tr>
+            <tr>
+              <td>Aptabase</td>
+              <td>Anonymous product analytics</td>
+              <td>Feature-usage events (not linked to you)</td>
+            </tr>
+            <tr>
+              <td>FatSecret</td>
+              <td>Food database search</td>
+              <td>Your food search queries (not your identity)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Each processor receives only what it needs to perform its function.</p>
+
+      <h2>4. Community content</h2>
       <p>
-        We do not sell your personal information, and we do not share it for
-        advertising. When you publish a workout to the community, we show only
-        safe details (such as the workout name, a first name or initial, and
-        counts). We never expose your email to other users.
+        Everything you create is <strong>private by default</strong>. If you
+        choose to publish a workout to the Community, its name and exercise list
+        become visible to other users along with your <strong>first name only</strong>,
+        never your email or any other account detail. You can unpublish at any
+        time in You → Privacy.
       </p>
 
-      <h2>Data retention</h2>
-      <p>
-        We keep your waitlist email until launch and for a reasonable period
-        after, or until you ask us to remove it. Account and fitness data is kept
-        until you delete your account, after which it is removed from our systems.
-      </p>
-
-      <h2>Security</h2>
-      <p>
-        Every user table is protected by row-level security so that only the
-        owner can read or write their rows. Data is encrypted in transit, and
-        privileged keys are held only on our servers, never in the app. No system
-        is perfectly secure, but we work to protect your data using industry
-        practices.
-      </p>
-
-      <h2>Your rights and choices</h2>
+      <h2>5. Data retention and deletion</h2>
       <ul>
+        <li>Your data is retained while your account exists.</li>
         <li>
-          <strong>Access and export:</strong> request a copy of your data by
-          emailing us.
+          Stale anonymous accounts (never signed in, inactive) are periodically
+          deleted automatically.
         </li>
         <li>
-          <strong>Delete:</strong> delete your account in the app to wipe your
-          data, or email us and we will do it.
+          <strong>Export:</strong> You → Settings → &ldquo;Export my data&rdquo;
+          gives you a copy of everything (JSON).
         </li>
         <li>
-          <strong>Unsubscribe:</strong> opt out of waitlist email at any time.
-        </li>
-        <li>
-          <strong>Withdraw consent:</strong> turn off notifications or Apple
-          Health access in your device settings.
+          <strong>Deletion:</strong> You can delete your account and all
+          associated data from within the app (You → Settings → Delete account).
+          Deletion is permanent and takes effect immediately on our systems.
         </li>
       </ul>
+
+      <h2>6. Your rights</h2>
       <p>
-        Depending on where you live, you may have additional rights under the
-        GDPR, UK GDPR, or CCPA, including access, correction, deletion, and the
-        right not to be discriminated against for exercising them. To make a
-        request, email <a href={`mailto:${site.email}`}>{site.email}</a>.
+        Depending on where you live (including under GDPR and Türkiye&apos;s
+        KVKK), you have the right to access, correct, export, or delete your
+        personal data, and to object to processing. The in-app export and
+        deletion tools cover most of this instantly; for anything else, email{" "}
+        <a href={`mailto:${site.email}`}>{site.email}</a> and we will respond
+        within 30 days.
       </p>
 
-      <h2>Children</h2>
+      <h2>7. Children</h2>
       <p>
-        Fitviyo is not directed to children under 13 (or the minimum age in your
-        country), and we do not knowingly collect their data. If you believe a
-        child has provided us information, contact us and we will remove it.
+        Fitviyo is not directed at children under 13 (or the minimum age in your
+        jurisdiction), and we do not knowingly collect data from them.
       </p>
 
-      <h2>International transfers</h2>
+      <h2>8. Security</h2>
       <p>
-        Fitviyo serves a US audience, and your data may be processed in the
-        United States and other countries where our providers operate. Where
-        required, we use appropriate safeguards for these transfers.
+        Data is transmitted over TLS and stored with row-level security so each
+        account can only access its own records. Authentication tokens are stored
+        in the iOS Keychain.
       </p>
 
-      <h2>Changes</h2>
+      <h2>9. Changes</h2>
       <p>
-        We may update this policy as Fitviyo evolves. We will revise the
-        &ldquo;last updated&rdquo; date above when we do, and we encourage you to
-        review it periodically.
+        We may update this policy as the app evolves. Material changes will be
+        reflected by the effective date above and, where appropriate, announced
+        in the app.
       </p>
     </LegalLayout>
   );

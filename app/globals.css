@@ -146,3 +146,23 @@
 .legal strong {
   color: var(--color-bone);
 }
+.legal table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+}
+.legal th,
+.legal td {
+  border: 1px solid var(--color-line);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.legal th {
+  color: var(--color-bone);
+  font-weight: 600;
+}
+.legal td {
+  color: var(--color-bone-60);
+}

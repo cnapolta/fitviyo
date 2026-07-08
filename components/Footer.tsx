@@ -33,6 +33,9 @@ export function Footer() {
             <Link href="/terms" className="text-bone-60 hover:text-bone">
               Terms
             </Link>
+            <Link href="/support" className="text-bone-60 hover:text-bone">
+              Support
+            </Link>
           </nav>
 
           <nav className="flex flex-col gap-3 text-sm" aria-label="Social">

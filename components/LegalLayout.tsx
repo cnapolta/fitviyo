@@ -8,7 +8,7 @@ export function LegalLayout({
   children,
 }: {
   title: string;
-  updated: string;
+  updated?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -29,7 +29,9 @@ export function LegalLayout({
 
       <main className="mx-auto max-w-3xl px-5 py-16">
         <h1 className="text-4xl font-extrabold tracking-tight">{title}</h1>
-        <p className="mt-3 text-sm text-bone-60">Last updated: {updated}</p>
+        {updated && (
+          <p className="mt-3 text-sm text-bone-60">Effective date: {updated}</p>
+        )}
         <div className="legal mt-10">{children}</div>
       </main>
 
