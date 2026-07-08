@@ -51,9 +51,9 @@ export function JsonLd() {
         screenshot: `${SITE_URL}${site.ogImage}`,
         featureList: [
           "Build your own workouts with a set-by-set player",
-          "Track calories, water, steps, and runs",
+          "Track calories, water, steps, and body weight",
           "Share workouts and discover the community",
-          "Private, local-first, and ad-free",
+          "Private by default and ad-free",
         ],
         publisher: { "@id": `${SITE_URL}/#organization` },
       },

@@ -12,7 +12,7 @@ export const features = [
   },
   {
     title: "Track everything, effortlessly.",
-    body: "Calories, water, steps, and runs, logged in a tap, on a real US food database.",
+    body: "Calories, water, steps, and body weight, logged in a tap, on a real US food database.",
     icon: "flame",
     img: {
       src: "/images/feature-track-nutrition.webp",
@@ -41,9 +41,9 @@ export const showcase = [
     span: "big" as const,
   },
   {
-    src: "/images/showcase-running-dawn.webp",
-    alt: "A lone runner at dawn on an empty road, cool dark tones with a coral sunrise accent, sense of motion, cinematic",
-    label: "Runs",
+    src: "/images/showcase-progress.webp",
+    alt: "A lean, athletic woman showing her strong, defined physique in a dark studio with a coral rim light",
+    label: "Progress",
     span: "wide" as const,
   },
   {

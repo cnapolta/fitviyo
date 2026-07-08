@@ -12,7 +12,7 @@ export function Hook() {
           They drown you in features you&apos;ll never touch, then guilt-trip you
           for missing a Monday. Fitviyo is different:{" "}
           <span className="text-bone">build your own workouts</span>, track food
-          and runs in seconds, and{" "}
+          and water in seconds, and{" "}
           <span className="text-bone">share your training</span> with a community
           that gets it.
         </p>

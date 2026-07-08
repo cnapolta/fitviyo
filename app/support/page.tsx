@@ -48,8 +48,8 @@ export default function SupportPage() {
 
       <h3>Is my data private?</h3>
       <p>
-        Yes. Fitviyo is local-first and private by default: we don&apos;t sell
-        your data, run ads, or track you across other apps. See our{" "}
+        Yes. Fitviyo is private by default: we don&apos;t sell your data, run
+        ads, or track you across other apps. See our{" "}
         <a href="/privacy">Privacy Policy</a> for the details.
       </p>
 

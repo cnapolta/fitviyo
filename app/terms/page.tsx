@@ -3,154 +3,158 @@ import { LegalLayout } from "@/components/LegalLayout";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Use",
+  title: "Terms of Service",
   description:
-    "The terms for using Fitviyo: accounts, Fitviyo Pro subscriptions, community content, and health disclaimers.",
+    "The terms for using the Fitviyo app and website, including accounts, subscriptions, community, and health disclaimers.",
   alternates: { canonical: "/terms" },
   robots: { index: true, follow: true },
 };
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms of Use" updated="July 8, 2026">
+    <LegalLayout title="Terms of Service" updated="July 8, 2026">
       <p>
-        These terms govern your use of the Fitviyo iOS app, operated by
-        Muharremcan Polat (&ldquo;we&rdquo;, &ldquo;us&rdquo;). By using Fitviyo
-        you agree to them. If you don&apos;t agree, don&apos;t use the app.
-      </p>
-      <p>
-        Contact: <a href={`mailto:${site.email}`}>{site.email}</a>
-      </p>
-
-      <h2>1. The service</h2>
-      <p>
-        Fitviyo is a workout and nutrition tracker: you can build and log
-        workouts, track food, water, weight and steps, share workout cards, and
-        browse community workouts. We license the app to you for personal,
-        non-commercial use on Apple devices you own or control, per Apple&apos;s
-        standard App Store license terms (EULA).
+        These terms govern your use of the Fitviyo app and the website at
+        fitviyo.com, including the waitlist. Fitviyo is operated by Muharremcan
+        Polat (&ldquo;Fitviyo&rdquo;, &ldquo;we&rdquo;). By using Fitviyo, you
+        agree to these terms. If you do not agree, please do not use Fitviyo.
+        Questions? Email <a href={`mailto:${site.email}`}>{site.email}</a>.
       </p>
 
-      <h2>2. Not medical advice</h2>
+      <h2>Eligibility</h2>
       <p>
-        Fitviyo provides fitness and nutrition <strong>tracking</strong>, not
-        medical advice. Calorie targets, calorie-burn figures, and similar
-        numbers are <strong>estimates</strong>. Consult a qualified professional
-        before starting any exercise or diet program, especially if you have a
-        medical condition. You exercise at your own risk; stop and seek help if
-        you feel pain, dizziness, or discomfort.
+        You must be at least 13 years old (or the minimum age required in your
+        country) to use Fitviyo. By using it, you confirm that you meet this
+        requirement and can enter into these terms.
       </p>
 
-      <h2>3. Accounts</h2>
+      <h2>Your account</h2>
       <p>
-        The app creates an anonymous account on first launch; you may upgrade it
-        by signing in with Apple or Google. You are responsible for activity on
-        your account. You can sign out, export your data, or delete your account
-        at any time in You → Settings.
+        Fitviyo works without signing in: the app creates a private anonymous
+        account so you can start immediately. If you choose to sign in, you do so
+        with Apple or Google. You are responsible for keeping access to your
+        sign-in method secure and for activity under your account. Tell us
+        promptly if you suspect unauthorized use.
       </p>
 
-      <h2>4. Fitviyo Pro (subscriptions)</h2>
+      <h2>The waitlist</h2>
+      <p>
+        Joining the waitlist reserves your spot for early access when Fitviyo
+        launches. It is not a purchase and creates no obligation on your part.
+        Early-access timing and features are described in good faith but may
+        change before launch.
+      </p>
+
+      <h2>License to use Fitviyo</h2>
+      <p>
+        We grant you a personal, non-exclusive, non-transferable, revocable
+        license to use the app for your own, non-commercial use, subject to these
+        terms. You may not copy, modify, reverse-engineer, resell, or
+        redistribute the app or its content except as allowed by law.
+      </p>
+
+      <h2>Acceptable use</h2>
       <ul>
+        <li>Provide accurate information and an email address you are allowed to use.</li>
         <li>
-          Fitviyo Pro is an optional <strong>auto-renewing subscription</strong>:
-          annual (with a 7-day free trial) or monthly. Prices are shown in the
-          app before purchase in your local currency.
+          Do not disrupt, overload, scrape, or attempt to gain unauthorized
+          access to Fitviyo or its systems.
         </li>
+        <li>Do not submit other people&apos;s information without permission.</li>
         <li>
-          Payment is charged to your <strong>Apple Account</strong> at
-          confirmation of purchase. For the annual plan, the trial converts to a
-          paid subscription unless cancelled at least 24 hours before the trial
-          ends.
-        </li>
-        <li>
-          Subscriptions <strong>renew automatically</strong> unless auto-renew is
-          turned off at least 24 hours before the end of the current period.
-          Manage or cancel anytime in iOS Settings → Apple Account →
-          Subscriptions (or via Manage subscription in the app).
-        </li>
-        <li>
-          Refunds are handled by Apple under App Store policies
-          (reportaproblem.apple.com).
-        </li>
-        <li>
-          Unused trial time is forfeited when you purchase a subscription
-          mid-trial.
+          Do not upload unlawful, infringing, or harmful content to the
+          community.
         </li>
       </ul>
 
-      <h2>5. Community content</h2>
-      <ul>
-        <li>
-          Workouts you create are private by default. Publishing one makes its
-          name and exercise list visible to all users, attributed to your first
-          name.
-        </li>
-        <li>
-          By publishing, you grant us a non-exclusive, worldwide license to
-          display and distribute that workout within the app (including letting
-          other users save a copy). You can unpublish at any time; copies other
-          users already saved remain theirs.
-        </li>
-        <li>
-          Don&apos;t publish content that is unlawful, misleading, infringing, or
-          abusive. We may remove content or restrict accounts that violate these
-          terms.
-        </li>
-      </ul>
-
-      <h2>6. Acceptable use</h2>
+      <h2>Community content</h2>
       <p>
-        You agree not to: reverse-engineer, scrape, or disrupt the service;
-        access other users&apos; data; use the app for any unlawful purpose; or
-        misrepresent workouts/nutrition data to other users in ways intended to
-        harm them.
+        Workouts you create are yours. Community workouts are private by default;
+        if you choose to publish one, you grant Fitviyo and other users a license
+        to view and copy it within the app. We show only safe details: the
+        workout name, its exercises, your first name, and counts. We never
+        display your email. You are responsible for what you publish, and we may
+        remove content or limit access to keep the community safe.
       </p>
 
-      <h2>7. Third-party services</h2>
+      <h2>Subscriptions (Fitviyo Pro)</h2>
       <p>
-        The app relies on third-party services (Apple, Supabase, RevenueCat,
-        OneSignal, Aptabase, FatSecret for food data). Food database content is
-        provided by FatSecret (&ldquo;Powered by fatsecret&rdquo;) and we
-        don&apos;t guarantee its accuracy.
+        Fitviyo offers a free tier and an optional Fitviyo Pro subscription that
+        unlocks additional features. Pro is an auto-renewing subscription sold
+        and billed through the App Store (and Google Play if Fitviyo comes to
+        Android). Current pricing and any introductory offer are shown in the app
+        at the point of purchase. Your subscription renews automatically unless
+        you cancel it at least 24 hours before the end of the current period. You
+        manage or cancel your subscription in your App Store account settings;
+        deleting your Fitviyo account does not cancel a subscription. Payments are
+        handled by the app store, and refunds are subject to the app store&apos;s
+        policies.
       </p>
 
-      <h2>8. Intellectual property</h2>
+      <h2>Health and fitness disclaimer</h2>
       <p>
-        The app, its design, and its content (excluding your data and content)
-        are ours or our licensors&apos;. You keep all rights to the data you
-        enter.
+        Fitviyo is a tracking tool, not a medical device or a provider of medical
+        advice. It does not diagnose, treat, or prevent any condition, and it does
+        not guarantee any result. Calorie and calorie-burn figures are estimates.
+        Consult a qualified professional before starting or changing any exercise
+        or nutrition program, especially if you have a health condition. You use
+        Fitviyo and act on the information in it at your own risk. Nutrition data
+        provided through third parties may be incomplete or inaccurate.
       </p>
 
-      <h2>9. Disclaimers and liability</h2>
+      <h2>Intellectual property</h2>
       <p>
-        The app is provided <strong>&ldquo;as is&rdquo;</strong>. To the maximum
-        extent permitted by law, we disclaim all warranties and are not liable
-        for indirect, incidental, or consequential damages, including injury
-        arising from exercise decisions, data loss, or service interruptions. Our
-        total liability is limited to the amount you paid us in the 12 months
-        before the claim. Nothing in these terms limits liability that cannot be
-        limited by law.
+        The Fitviyo name, logo, copy, design, and images are owned by Fitviyo. You
+        may share links to Fitviyo, but you may not copy or repurpose our content
+        without permission. You keep all rights to the data you enter.
       </p>
 
-      <h2>10. Termination</h2>
+      <h2>Third-party services and app stores</h2>
       <p>
-        You can stop using the app or delete your account at any time. We may
-        suspend or terminate accounts that violate these terms. Sections that by
-        nature survive termination (5, 8, 9, 11) survive.
+        Fitviyo relies on third-party services, including Apple, Google,
+        FatSecret, Supabase, RevenueCat, OneSignal, and Aptabase. Your use of the
+        app through the App Store is also subject to Apple&apos;s terms. Where you
+        download the app from the Apple App Store, Apple is not responsible for the
+        app, and Apple is a third-party beneficiary of these terms and may enforce
+        them against you.
       </p>
 
-      <h2>11. Governing law</h2>
+      <h2>Disclaimers</h2>
       <p>
-        These terms are governed by the laws of the Republic of Türkiye, without
-        prejudice to mandatory consumer protections in your country of residence.
+        Fitviyo is provided &ldquo;as is&rdquo; and &ldquo;as available.&rdquo; We
+        work hard to keep it reliable and accurate, but we do not guarantee that it
+        will be uninterrupted, error-free, or that data will always be preserved.
+        To the fullest extent permitted by law, we disclaim all warranties not
+        expressly stated here.
       </p>
 
-      <h2>12. Changes</h2>
+      <h2>Limitation of liability</h2>
       <p>
-        We may update these terms; material changes will be reflected by the
-        effective date above and, where appropriate, announced in the app.
-        Continued use after changes means acceptance. See also our{" "}
-        <a href="/privacy">Privacy Policy</a>.
+        To the fullest extent permitted by law, Fitviyo and its team are not liable
+        for any indirect, incidental, special, or consequential damages, or for any
+        loss of data, arising from your use of Fitviyo.
+      </p>
+
+      <h2>Termination</h2>
+      <p>
+        You may stop using Fitviyo at any time, and you can delete your account in
+        the app (You → Settings → Delete account). We may suspend or end access if
+        you violate these terms or misuse the service. Sections that by their
+        nature should survive termination will continue to apply.
+      </p>
+
+      <h2>Governing law</h2>
+      <p>
+        These terms are governed by the laws applicable where Fitviyo operates,
+        without regard to conflict-of-laws rules. Nothing here limits any rights you
+        have that cannot be waived under your local law.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        We may update these terms as Fitviyo evolves. Continued use after changes
+        means you accept the updated terms. See also our{" "}
+        <a href="/privacy">Privacy Policy</a> for how we handle your data.
       </p>
     </LegalLayout>
   );

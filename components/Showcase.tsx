@@ -28,8 +28,8 @@ export function Showcase() {
             Built for the way you actually train.
           </h2>
           <p className="mt-4 text-lg text-bone-60">
-            Lifts, runs, meals, and a community that gets it, all in one dark,
-            distraction-free app.
+            Lifts, meals, progress, and a community that gets it, all in one
+            dark, distraction-free app.
           </p>
         </div>
 
