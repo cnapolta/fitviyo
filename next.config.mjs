@@ -8,6 +8,17 @@ const nextConfig = {
   async redirects() {
     return [];
   },
+  async rewrites() {
+    return [
+      // Serve the Apple App Site Association file at the exact well-known path
+      // (extensionless, application/json, 200, no redirect) from the /aasa
+      // route handler.
+      {
+        source: "/.well-known/apple-app-site-association",
+        destination: "/aasa",
+      },
+    ];
+  },
   async headers() {
     return [
       {
