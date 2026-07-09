@@ -16,6 +16,8 @@ const CORAL = "#FF6044";
 const BONE = "#EDE9E0";
 const BONE60 = "#A6A199";
 
+const CORAL2 = "#FF6200";
+
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <radialGradient id="g" cx="80%" cy="22%" r="70%" gradientUnits="userSpaceOnUse">
@@ -23,22 +25,26 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" v
       <stop offset="0.55" stop-color="${CORAL}" stop-opacity="0.06"/>
       <stop offset="1" stop-color="${INK0}" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="${CORAL}"/>
+      <stop offset="1" stop-color="${CORAL2}"/>
+    </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="${INK0}"/>
   <rect width="1200" height="630" fill="url(#g)"/>
 
-  <!-- logo tile + wordmark (no trailing dot) -->
-  <rect x="80" y="70" width="96" height="96" rx="22" fill="${CORAL}"/>
+  <!-- logo tile (gradient) + wordmark (no trailing dot) -->
+  <rect x="80" y="70" width="96" height="96" rx="22" fill="url(#brand)"/>
   <text x="128" y="141" fill="${INK0}" font-family="Arial, sans-serif" font-size="68" font-weight="800" text-anchor="middle">F</text>
   <text x="196" y="140" fill="${BONE}" font-family="Arial, sans-serif" font-size="52" font-weight="700">Fitviyo</text>
 
-  <!-- headline -->
+  <!-- headline (colored second line) -->
   <text x="80" y="330" fill="${BONE}" font-family="Arial, sans-serif" font-size="94" font-weight="800">Train on</text>
-  <text x="80" y="438" fill="${BONE}" font-family="Arial, sans-serif" font-size="94" font-weight="800">your terms.</text>
+  <text x="80" y="438" fill="url(#brand)" font-family="Arial, sans-serif" font-size="94" font-weight="800">your terms.</text>
 
   <!-- subtitle -->
   <text x="80" y="512" fill="${BONE60}" font-family="Arial, sans-serif" font-size="31">The private workout &amp; nutrition tracker for people who lift.</text>
-  <rect x="80" y="545" width="320" height="6" rx="3" fill="${CORAL}"/>
+  <rect x="80" y="545" width="320" height="6" rx="3" fill="url(#brand)"/>
 </svg>`;
 
 await sharp(Buffer.from(svg)).png().toFile(join(PUBLIC, "og-image.png"));

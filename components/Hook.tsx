@@ -6,11 +6,13 @@ export function Hook() {
           id="hook-heading"
           className="text-3xl font-bold tracking-tight sm:text-4xl"
         >
-          Most fitness apps get in your way.
+          Most fitness apps get{" "}
+          <span className="text-coral-grad">in your way.</span>
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-bone-60">
           They drown you in features you&apos;ll never touch, then guilt-trip you
-          for missing a Monday. Fitviyo is different:{" "}
+          for missing a Monday.{" "}
+          <span className="text-coral-grad">Fitviyo is different</span>:{" "}
           <span className="text-bone">build your own workouts</span>, track food
           and water in seconds, and{" "}
           <span className="text-bone">share your training</span> with a community

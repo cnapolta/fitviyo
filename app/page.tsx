@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { Hook } from "@/components/Hook";
 import { FeatureTrio } from "@/components/FeatureTrio";
 import { AppFeatures } from "@/components/AppFeatures";
-import { WhyJoin } from "@/components/WhyJoin";
 import { Contact } from "@/components/Contact";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
@@ -19,7 +18,6 @@ export default function Home() {
         <Hook />
         <FeatureTrio />
         <AppFeatures />
-        <WhyJoin />
         <Contact />
         <FinalCTA />
       </main>

@@ -62,7 +62,7 @@ export function AppFeatures() {
               key={f.title}
               className="rounded-brand border border-line bg-ink-2 p-6"
             >
-              <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-coral/12 text-coral">
+              <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-coral-grad text-ink-0">
                 <f.Icon width={24} height={24} />
               </span>
               <h3 className="font-display text-lg font-semibold text-bone">
