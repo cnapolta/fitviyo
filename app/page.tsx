@@ -2,7 +2,6 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Hook } from "@/components/Hook";
 import { AppFeatures } from "@/components/AppFeatures";
-import { Contact } from "@/components/Contact";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
@@ -16,7 +15,6 @@ export default function Home() {
         <Hero />
         <Hook />
         <AppFeatures />
-        <Contact />
         <FinalCTA />
       </main>
       <Footer />

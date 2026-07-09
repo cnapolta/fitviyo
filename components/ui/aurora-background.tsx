@@ -20,7 +20,7 @@ export function AuroraBackground({
   return (
     <div
       className={cn(
-        "relative flex flex-col items-center justify-center overflow-hidden bg-ink-0",
+        "relative flex flex-col items-center justify-center overflow-hidden",
         className,
       )}
       {...props}
