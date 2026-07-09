@@ -32,6 +32,25 @@
 
   body {
     background-color: var(--color-ink-0);
+    /* One continuous, very faint coral ambiance behind the whole page so
+       sections flow into each other instead of butting up as hard bands. */
+    background-image:
+      radial-gradient(
+        60% 44% at 82% 6%,
+        color-mix(in srgb, var(--color-coral) 9%, transparent) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        52% 40% at 12% 42%,
+        color-mix(in srgb, var(--color-coral-2) 7%, transparent) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        55% 42% at 88% 78%,
+        color-mix(in srgb, var(--color-coral) 7%, transparent) 0%,
+        transparent 70%
+      );
+    background-repeat: no-repeat;
     color: var(--color-bone);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
@@ -200,6 +219,14 @@
 /* Subtle top-to-bottom section separation */
 .hairline {
   border-top: 1px solid var(--color-line);
+}
+
+/* Frosted glass panel: a faint translucent surface over the page ambiance. */
+.glass {
+  background-color: color-mix(in srgb, var(--color-bone) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-bone) 9%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Prose styling for /privacy and /terms */

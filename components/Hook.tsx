@@ -1,6 +1,6 @@
 export function Hook() {
   return (
-    <section className="hairline bg-ink-1" aria-labelledby="hook-heading">
+    <section className="relative" aria-labelledby="hook-heading">
       <div className="mx-auto max-w-4xl px-5 py-20 text-center md:py-28">
         <h2
           id="hook-heading"

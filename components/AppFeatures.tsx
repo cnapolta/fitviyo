@@ -42,7 +42,7 @@ const features = [
 
 export function AppFeatures() {
   return (
-    <section className="hairline bg-ink-1" aria-labelledby="appfeatures-heading">
+    <section className="relative" aria-labelledby="appfeatures-heading">
       <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <h2
@@ -60,7 +60,7 @@ export function AppFeatures() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="rounded-brand border border-line bg-ink-2 p-6"
+              className="glass rounded-brand p-6"
             >
               <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-coral-grad text-ink-0">
                 <f.Icon width={24} height={24} />

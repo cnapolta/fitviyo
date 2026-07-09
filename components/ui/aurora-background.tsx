@@ -25,13 +25,16 @@ export function AuroraBackground({
       )}
       {...props}
     >
-      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+      <div
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+        aria-hidden="true"
+      >
         <div
           className="aurora-lights"
           style={showRadialGradient ? undefined : { maskImage: "none", WebkitMaskImage: "none" }}
         />
       </div>
-      {children}
+      <div className="relative z-10 w-full">{children}</div>
     </div>
   );
 }

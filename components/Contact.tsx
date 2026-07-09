@@ -2,7 +2,7 @@ import { site } from "@/lib/site";
 
 export function Contact() {
   return (
-    <section className="hairline bg-ink-1" aria-labelledby="contact-heading">
+    <section className="relative" aria-labelledby="contact-heading">
       <div className="mx-auto max-w-2xl px-5 py-20 text-center md:py-28">
         <h2
           id="contact-heading"

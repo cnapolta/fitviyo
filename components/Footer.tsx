@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export function Footer() {
   const year = 2026; // build-time constant (Date.now() unavailable in this env)
   return (
-    <footer className="hairline bg-ink-0">
+    <footer className="border-t border-line/50">
       <div className="mx-auto max-w-6xl px-5 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-xs">

@@ -4,7 +4,7 @@ import { WaitlistCount } from "@/components/WaitlistCount";
 
 export function Hero() {
   return (
-    <AuroraBackground className="border-b border-line/70">
+    <AuroraBackground>
       <section
         aria-labelledby="hero-heading"
         className="mx-auto flex max-w-3xl flex-col items-center px-5 py-24 text-center md:py-32"
