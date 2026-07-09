@@ -52,6 +52,11 @@
     color: var(--color-ink-0);
   }
 
+  button:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+
   /* Visible, on-brand focus ring for keyboard users (a11y) */
   :focus-visible {
     outline: 2px solid var(--color-coral);
@@ -90,6 +95,23 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Primary button: pointer + a coral glow that lights up on hover. */
+.btn-glow {
+  cursor: pointer;
+  transition:
+    box-shadow 0.25s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+.btn-glow:hover {
+  box-shadow:
+    0 6px 18px -6px color-mix(in srgb, var(--color-coral) 70%, transparent),
+    0 10px 44px -8px color-mix(in srgb, var(--color-coral-2) 65%, transparent);
+}
+.btn-glow:active {
+  transform: translateY(1px);
 }
 
 /* Coral radial glow used behind hero / CTAs */

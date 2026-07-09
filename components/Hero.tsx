@@ -1,77 +1,39 @@
-import Image from "next/image";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { WaitlistCount } from "@/components/WaitlistCount";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden" aria-labelledby="hero-heading">
-      <div
-        className="coral-glow pointer-events-none absolute inset-x-0 top-0 h-[600px]"
-        aria-hidden="true"
-      />
-      {/* Light pulsing in waves behind the content. Two glows offset in phase
-          so the brightness undulates. */}
-      <div
-        className="hero-wave pointer-events-none absolute left-[14%] top-[34%] h-80 w-80 rounded-full blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in srgb, var(--color-coral) 45%, transparent) 0%, transparent 70%)",
-        }}
-        aria-hidden="true"
-      />
-      <div
-        className="hero-wave pointer-events-none absolute left-[40%] top-[14%] h-64 w-64 rounded-full blur-2xl"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in srgb, var(--color-coral) 38%, transparent) 0%, transparent 70%)",
-          animationDelay: "-6s",
-          animationDuration: "14s",
-        }}
-        aria-hidden="true"
-      />
+    <AuroraBackground
+      variant="custom"
+      colors={["hsla(9, 100%, 63%, 0.5)", "hsla(23, 100%, 50%, 0.28)", "transparent"]}
+      speed={0.55}
+      blobCount={4}
+      className="border-b border-line/70 bg-ink-0"
+    >
+      <section
+        aria-labelledby="hero-heading"
+        className="mx-auto flex max-w-3xl flex-col items-center px-5 py-24 text-center md:py-32"
+      >
+        <h1
+          id="hero-heading"
+          className="text-balance text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
+        >
+          Train on <span className="text-coral-grad">your terms.</span>
+        </h1>
+        <p className="mt-6 max-w-xl text-lg text-bone-60">
+          The private, beautiful workout and nutrition tracker for people who
+          actually lift. Get a plan for your goal, then track every set and meal.
+        </p>
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24">
-        <div className="relative">
-          <h1
-            id="hero-heading"
-            className="text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
-          >
-            Train on <span className="text-coral-grad">your terms.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-bone-60">
-            Fitviyo is the private, beautiful workout and nutrition tracker built
-            for people who actually lift. Get a plan matched to your goal, then
-            track every set, meal, and milestone. No clutter, no guilt, no ads.
-            Join the waitlist for early access.
-          </p>
-
-          <div className="mt-8 max-w-xl">
-            <WaitlistForm id="join" />
-          </div>
-
-          <div className="mt-8">
-            <WaitlistCount />
-          </div>
+        <div className="mt-9 w-full max-w-md">
+          <WaitlistForm id="join" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-sm">
-          <div
-            className="coral-glow pointer-events-none absolute inset-0 scale-125"
-            aria-hidden="true"
-          />
-          <div className="relative overflow-hidden rounded-[2rem] border border-line bg-ink-1 shadow-2xl">
-            <Image
-              src="/images/hero-runner-dawn.webp"
-              alt="A lone runner sprinting down an open road at dawn with a dramatic orange sunrise and warm coral light"
-              width={900}
-              height={1200}
-              priority
-              sizes="(max-width: 768px) 90vw, 384px"
-              className="h-auto w-full object-cover"
-            />
-          </div>
+        <div className="mt-8 flex justify-center">
+          <WaitlistCount />
         </div>
-      </div>
-    </section>
+      </section>
+    </AuroraBackground>
   );
 }
