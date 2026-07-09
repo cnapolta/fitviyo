@@ -156,18 +156,52 @@ export function AuroraBackground({
       ctx.globalCompositeOperation = "source-over";
     };
 
-    const animate = () => {
-      timeRef.current += 0.01 * speed;
-      draw();
-      if (!reduce) {
-        raf = requestAnimationFrame(animate);
+    // Cap at ~30fps and pause when the canvas is off-screen to keep the
+    // animation cheap on the main thread (and easy on battery).
+    const frameInterval = 1000 / 30;
+    let running = false;
+    let last = 0;
+
+    const frame = (now: number) => {
+      if (!running) {
+        return;
       }
+      if (now - last >= frameInterval) {
+        last = now;
+        timeRef.current += 0.02 * speed;
+        draw();
+      }
+      raf = requestAnimationFrame(frame);
     };
-    raf = requestAnimationFrame(animate);
+    const start = () => {
+      if (running || reduce) {
+        return;
+      }
+      running = true;
+      raf = requestAnimationFrame(frame);
+    };
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(raf);
+    };
+
+    let io: IntersectionObserver | undefined;
+    if (reduce) {
+      draw();
+    } else if (typeof IntersectionObserver === "function") {
+      io = new IntersectionObserver(
+        (entries) => (entries[0]?.isIntersecting ? start() : stop()),
+        { threshold: 0 },
+      );
+      io.observe(canvas);
+    } else {
+      start();
+    }
 
     return () => {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(raf);
+      io?.disconnect();
     };
   }, [variant, colors, speed, blobCount]);
 
