@@ -2,7 +2,7 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Hook } from "@/components/Hook";
 import { FeatureTrio } from "@/components/FeatureTrio";
-import { Showcase } from "@/components/Showcase";
+import { AppFeatures } from "@/components/AppFeatures";
 import { WhyJoin } from "@/components/WhyJoin";
 import { Contact } from "@/components/Contact";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -18,7 +18,7 @@ export default function Home() {
         <Hero />
         <Hook />
         <FeatureTrio />
-        <Showcase />
+        <AppFeatures />
         <WhyJoin />
         <Contact />
         <FinalCTA />

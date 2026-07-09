@@ -36,7 +36,7 @@ export function Hero() {
             id="hero-heading"
             className="text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
           >
-            Train on your terms.
+            Train on <span className="text-coral-grad">your terms.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-bone-60">
             Fitviyo is the private, beautiful workout and nutrition tracker built

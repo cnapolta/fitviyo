@@ -82,6 +82,32 @@ export function CompassIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function ChartIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M4 19V5M4 19h16M7 15l4-5 3 3 5-7" />
+    </svg>
+  );
+}
+
+export function ShieldIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 3 5 6v5.5c0 4 2.9 6.9 7 8.5 4.1-1.6 7-4.5 7-8.5V6l-7-3Z" />
+      <path d="m9 12 2 2 4-4.5" />
+    </svg>
+  );
+}
+
+export function TimerIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="12" cy="13" r="8" />
+      <path d="M12 13V9M12 5V3M10 3h4" />
+    </svg>
+  );
+}
+
 export const featureIcons = {
   dumbbell: DumbbellIcon,
   flame: FlameIcon,

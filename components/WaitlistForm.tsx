@@ -87,7 +87,7 @@ export function WaitlistForm({
         aria-live="polite"
       >
         <div className="flex items-center gap-3">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-coral text-ink-0">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-coral-grad text-ink-0">
             <CheckIcon width={20} height={20} strokeWidth={2.2} />
           </span>
           <p className="text-bone">
@@ -158,7 +158,7 @@ export function WaitlistForm({
         <button
           type="submit"
           disabled={status === "loading"}
-          className="group inline-flex h-13 shrink-0 items-center justify-center gap-2 rounded-xl bg-coral px-6 py-3 font-semibold text-ink-0 transition-opacity hover:opacity-90 disabled:opacity-60"
+          className="group inline-flex h-13 shrink-0 items-center justify-center gap-2 rounded-xl bg-coral-grad px-6 py-3 font-semibold text-ink-0 transition-opacity hover:opacity-90 disabled:opacity-60"
         >
           {status === "loading" ? "Joining…" : "Join the waitlist"}
           {status !== "loading" && (

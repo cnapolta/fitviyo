@@ -6,6 +6,7 @@
    ───────────────────────────────────────────────────────────── */
 @theme {
   --color-coral: #ff6044;
+  --color-coral-2: #ff6200;
   --color-ink-0: #0c0e11;
   --color-ink-1: #14171c;
   --color-ink-2: #1b1f26;
@@ -70,6 +71,25 @@
       transition-duration: 0.01ms !important;
     }
   }
+}
+
+/* Brand coral gradient (#FF6044 -> #FF6200), matching the logo. */
+.bg-coral-grad {
+  background-image: linear-gradient(
+    135deg,
+    var(--color-coral) 0%,
+    var(--color-coral-2) 100%
+  );
+}
+.text-coral-grad {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-coral) 0%,
+    var(--color-coral-2) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Coral radial glow used behind hero / CTAs */

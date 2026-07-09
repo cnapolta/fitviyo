@@ -16,7 +16,7 @@ export function Contact() {
         </p>
         <a
           href={`mailto:${site.email}`}
-          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-coral px-6 py-3 font-semibold text-ink-0 transition-opacity hover:opacity-90"
+          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-coral-grad px-6 py-3 font-semibold text-ink-0 transition-opacity hover:opacity-90"
         >
           {site.email}
         </a>

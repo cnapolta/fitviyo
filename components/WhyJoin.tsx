@@ -41,7 +41,7 @@ export function WhyJoin() {
               key={r.title}
               className="rounded-brand border border-line bg-ink-1 p-7"
             >
-              <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-coral text-ink-0">
+              <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-coral-grad text-ink-0">
                 <r.icon width={24} height={24} strokeWidth={1.8} />
               </span>
               <h3 className="font-display text-xl font-semibold text-bone">

@@ -29,33 +29,3 @@ export const features = [
     },
   },
 ] as const;
-
-// Higgsfield atmospheric showcase, arranged as a bento mosaic. `span` maps to
-// grid spans in Showcase.tsx. Filenames + alt text carry the prompt so finished
-// assets can be dropped in /public/images and swapped.
-export const showcase = [
-  {
-    src: "/images/showcase-lifts.webp",
-    alt: "A powerful athlete performing a heavy barbell deadlift in a dark studio gym with a dramatic coral rim light",
-    label: "Lifts",
-    span: "big" as const,
-  },
-  {
-    src: "/images/showcase-progress.webp",
-    alt: "A lean, athletic woman showing her strong, defined physique in a dark studio with a coral rim light",
-    label: "Progress",
-    span: "wide" as const,
-  },
-  {
-    src: "/images/showcase-food-highprotein.webp",
-    alt: "Clean overhead of a healthy high-protein meal on a dark stone surface, moody directional light, editorial food photography",
-    label: "Nutrition",
-    span: "small" as const,
-  },
-  {
-    src: "/images/showcase-community-training.webp",
-    alt: "A diverse group of men and women training together in low light with a subtle coral rim light, cinematic",
-    label: "Community",
-    span: "small" as const,
-  },
-] as const;

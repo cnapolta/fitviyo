@@ -71,7 +71,7 @@ export function WaitlistCount() {
     >
       <span
         aria-hidden="true"
-        className="font-display text-5xl font-extrabold leading-none tracking-tight text-coral tabular-nums"
+        className="font-display text-5xl font-extrabold leading-none tracking-tight text-coral-grad tabular-nums"
       >
         {display.toLocaleString("en-US")}+
       </span>
