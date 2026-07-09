@@ -114,43 +114,87 @@
   transform: translateY(1px);
 }
 
-/* Coral radial glow used behind hero / CTAs */
-.coral-glow {
-  background: radial-gradient(
-    60% 60% at 50% 40%,
-    color-mix(in srgb, var(--color-coral) 28%, transparent) 0%,
-    transparent 70%
+/* Soft aurora lights (Aceternity-style) in our coral palette. Streaky,
+   heavily blurred, low opacity, and masked to a corner so it never
+   overpowers the content. The global reduced-motion rule freezes it. */
+@keyframes aurora {
+  from {
+    background-position:
+      50% 50%,
+      50% 50%;
+  }
+  to {
+    background-position:
+      350% 50%,
+      350% 50%;
+  }
+}
+.aurora-lights {
+  --aurora: repeating-linear-gradient(
+    100deg,
+    #ff6044 10%,
+    #ff8a5c 15%,
+    #ff6200 20%,
+    #ffc4a3 25%,
+    #ff7a3a 30%
+  );
+  --streak: repeating-linear-gradient(
+    100deg,
+    #0c0e11 0%,
+    #0c0e11 7%,
+    transparent 10%,
+    transparent 12%,
+    #0c0e11 16%
+  );
+  position: absolute;
+  inset: -10px;
+  pointer-events: none;
+  background-image: var(--streak), var(--aurora);
+  background-size:
+    300% 200%,
+    200% 100%;
+  background-position:
+    50% 50%,
+    50% 50%;
+  filter: blur(16px);
+  opacity: 0.22;
+  will-change: transform;
+  mask-image: radial-gradient(ellipse at 100% 0%, #000 8%, transparent 62%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at 100% 0%,
+    #000 8%,
+    transparent 62%
   );
 }
-
-/* A very subtle coral light that slowly drifts in the dark behind the hero.
-   Composited (transform/opacity only). The global reduced-motion rule below
-   freezes it for users who prefer no motion. */
-@keyframes hero-wave {
-  0% {
-    transform: translate3d(-14%, -6%, 0) scale(0.92);
-    opacity: 0.5;
-  }
-  25% {
-    transform: translate3d(6%, 2%, 0) scale(1.18);
-    opacity: 1;
-  }
-  50% {
-    transform: translate3d(15%, 9%, 0) scale(0.98);
-    opacity: 0.62;
-  }
-  75% {
-    transform: translate3d(-2%, 13%, 0) scale(1.14);
-    opacity: 0.95;
-  }
-  100% {
-    transform: translate3d(-14%, -6%, 0) scale(0.92);
-    opacity: 0.5;
-  }
+.aurora-lights::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--streak), var(--aurora);
+  background-size:
+    200% 100%,
+    100% 100%;
+  mix-blend-mode: difference;
+  animation: aurora 60s linear infinite;
 }
-.hero-wave {
-  animation: hero-wave 12s ease-in-out infinite;
-  will-change: transform, opacity;
+/* On phones, swap the blurred/blended animated aurora for a cheap static
+   coral glow in the same corner. Same look, near-zero paint cost. */
+@media (max-width: 767px) {
+  .aurora-lights {
+    filter: none;
+    opacity: 1;
+    mix-blend-mode: normal;
+    background-image: radial-gradient(
+      ellipse 95% 65% at 100% 0%,
+      color-mix(in srgb, var(--color-coral) 22%, transparent) 0%,
+      transparent 70%
+    );
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .aurora-lights::after {
+    display: none;
+  }
 }
 
 /* Subtle top-to-bottom section separation */

@@ -4,13 +4,7 @@ import { WaitlistCount } from "@/components/WaitlistCount";
 
 export function Hero() {
   return (
-    <AuroraBackground
-      variant="custom"
-      colors={["hsla(9, 100%, 63%, 0.5)", "hsla(23, 100%, 50%, 0.28)", "transparent"]}
-      speed={0.55}
-      blobCount={4}
-      className="border-b border-line/70 bg-ink-0"
-    >
+    <AuroraBackground className="border-b border-line/70">
       <section
         aria-labelledby="hero-heading"
         className="mx-auto flex max-w-3xl flex-col items-center px-5 py-24 text-center md:py-32"
