@@ -196,43 +196,6 @@
   mix-blend-mode: difference;
   animation: aurora 60s linear infinite;
 }
-/* On phones, swap the blurred/blended animated aurora for a brighter coral
-   glow centered behind the hero content, with a cheap GPU-only transform
-   drift (no repaint, so it stays fast). */
-@keyframes aurora-mobile {
-  0%,
-  100% {
-    transform: translate3d(-4%, -2%, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(4%, 3%, 0) scale(1.08);
-  }
-}
-@media (max-width: 767px) {
-  .aurora-lights {
-    filter: none;
-    opacity: 1;
-    mix-blend-mode: normal;
-    background-image:
-      radial-gradient(
-        ellipse 135% 58% at 50% 6%,
-        color-mix(in srgb, var(--color-coral) 30%, transparent) 0%,
-        transparent 62%
-      ),
-      radial-gradient(
-        ellipse 85% 45% at 76% 44%,
-        color-mix(in srgb, var(--color-coral-2) 16%, transparent) 0%,
-        transparent 72%
-      );
-    mask-image: none;
-    -webkit-mask-image: none;
-    animation: aurora-mobile 14s ease-in-out infinite;
-    will-change: transform;
-  }
-  .aurora-lights::after {
-    display: none;
-  }
-}
 
 /* Subtle top-to-bottom section separation */
 .hairline {
