@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="Privacy Policy" updated="July 8, 2026">
+    <LegalLayout title="Privacy Policy" updated="July 18, 2026">
       <p>
         Fitviyo is built privacy-first. Fitviyo and fitviyo.com are operated by
         Muharremcan Polat (&ldquo;Fitviyo&rdquo;, &ldquo;we&rdquo;). This policy
@@ -116,6 +116,10 @@ export default function PrivacyPage() {
         <li>To provide the app: logging, sync, community, and progress views.</li>
         <li>To look up foods you search (see Food data below).</li>
         <li>To manage your Fitviyo Pro subscription and unlock Pro features.</li>
+        <li>
+          To power optional AI features (workout import and weekly insight) when
+          you use them.
+        </li>
         <li>To send notifications you have opted into.</li>
         <li>To keep the service secure and to fix and improve it.</li>
         <li>To tell waitlist members about early access and launch.</li>
@@ -129,10 +133,24 @@ export default function PrivacyPage() {
         &ldquo;Powered by fatsecret&rdquo; attribution where required.
       </p>
 
+      <h2>AI features</h2>
+      <p>
+        Fitviyo Pro includes optional AI features: turning a training program
+        you paste or describe into structured workouts, and a weekly insight
+        that summarizes your own activity. When you use these, the text you
+        provide or a compact summary of your recent training, nutrition, water,
+        and steps is sent through our secure server to Google&apos;s Gemini API
+        to generate the result, and is returned to you in the app. This data is
+        processed to produce your result and is handled under Google&apos;s API
+        terms; we do not use it to build a profile of you or to serve ads. AI
+        features run only when you choose to use them.
+      </p>
+
       <h2>Legal bases (GDPR)</h2>
       <p>
         Where the GDPR applies, we rely on: your consent (for waitlist email,
-        push notifications, and Apple Health access); performance of a contract
+        push notifications, Apple Health access, and AI features); performance
+        of a contract
         (to provide your account and subscription); and our legitimate interests
         (to keep the service secure and to improve it using anonymous analytics).
       </p>
@@ -148,6 +166,10 @@ export default function PrivacyPage() {
         <li>OneSignal: push notification delivery.</li>
         <li>FatSecret: food and nutrition lookups.</li>
         <li>Apple and Google: sign-in.</li>
+        <li>
+          Google (Gemini API): generating results for the optional AI features,
+          only when you use them.
+        </li>
         <li>Aptabase and Vercel: anonymous analytics and website hosting.</li>
         <li>Resend and Cloudflare: email delivery and bot protection for the website.</li>
       </ul>

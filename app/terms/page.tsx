@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms of Service" updated="July 8, 2026">
+    <LegalLayout title="Terms of Service" updated="July 18, 2026">
       <p>
         These terms govern your use of the Fitviyo app and the website at
         fitviyo.com, including the waitlist. Fitviyo is operated by Muharremcan
@@ -100,6 +100,9 @@ export default function TermsPage() {
         or nutrition program, especially if you have a health condition. You use
         Fitviyo and act on the information in it at your own risk. Nutrition data
         provided through third parties may be incomplete or inaccurate.
+        AI-generated workouts and insights are suggestions produced from the
+        input you provide and can be wrong or incomplete, so always review them
+        and use your own judgment.
       </p>
 
       <h2>Intellectual property</h2>
@@ -111,7 +114,8 @@ export default function TermsPage() {
 
       <h2>Third-party services and app stores</h2>
       <p>
-        Fitviyo relies on third-party services, including Apple, Google,
+        Fitviyo relies on third-party services, including Apple, Google
+        (including the Gemini API that powers the optional AI features),
         FatSecret, Supabase, RevenueCat, OneSignal, and Aptabase. Your use of the
         app through the App Store is also subject to Apple&apos;s terms. Where you
         download the app from the Apple App Store, Apple is not responsible for the
