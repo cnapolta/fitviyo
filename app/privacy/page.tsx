@@ -141,7 +141,7 @@ export default function PrivacyPage() {
         provide or a compact summary of your recent training, nutrition, water,
         and steps is sent through our secure server to Google&apos;s Gemini API
         to generate the result, and is returned to you in the app. This data is
-        processed to produce your result and is handled under Google&apos;s API
+        sent only to produce your result and is handled under Google&apos;s API
         terms; we do not use it to build a profile of you or to serve ads. AI
         features run only when you choose to use them.
       </p>
