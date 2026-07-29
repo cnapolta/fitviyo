@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms of Service" updated="July 18, 2026">
+    <LegalLayout title="Terms of Service" updated="July 29, 2026">
       <p>
         These terms govern your use of the Fitviyo app and the website at
         fitviyo.com, including the waitlist. Fitviyo is operated by Muharremcan

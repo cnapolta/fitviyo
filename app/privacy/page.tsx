@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="Privacy Policy" updated="July 18, 2026">
+    <LegalLayout title="Privacy Policy" updated="July 29, 2026">
       <p>
         Fitviyo is built privacy-first. Fitviyo and fitviyo.com are operated by
         Muharremcan Polat (&ldquo;Fitviyo&rdquo;, &ldquo;we&rdquo;). This policy
