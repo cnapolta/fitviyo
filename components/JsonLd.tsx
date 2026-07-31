@@ -46,9 +46,16 @@ export function JsonLd() {
         operatingSystem: "iOS",
         description: site.description,
         url: SITE_URL,
+        downloadUrl: site.appStoreUrl,
+        installUrl: site.appStoreUrl,
         inLanguage: "en-US",
         image: `${SITE_URL}${site.ogImage}`,
         screenshot: `${SITE_URL}${site.ogImage}`,
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+        },
         featureList: [
           "Build your own workouts with a set-by-set player",
           "Track calories, water, steps, and body weight",

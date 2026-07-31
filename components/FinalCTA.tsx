@@ -1,4 +1,4 @@
-import { WaitlistForm } from "@/components/WaitlistForm";
+import { StoreButtons } from "@/components/StoreButtons";
 
 export function FinalCTA() {
   return (
@@ -8,15 +8,13 @@ export function FinalCTA() {
           id="final-cta-heading"
           className="text-balance text-4xl font-extrabold tracking-tight sm:text-5xl"
         >
-          Be <span className="text-coral-grad">first.</span>
+          Start training <span className="text-coral-grad">today.</span>
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-lg text-bone-60">
-          Join the waitlist for early access. No spam, just a heads-up when we
-          launch.
+          Fitviyo is out now on iPhone. Free to start, private by default, and
+          no ads.
         </p>
-        <div className="mx-auto mt-8 max-w-xl">
-          <WaitlistForm />
-        </div>
+        <StoreButtons className="mt-8" />
       </div>
     </section>
   );

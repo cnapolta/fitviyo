@@ -1,6 +1,5 @@
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { WaitlistForm } from "@/components/WaitlistForm";
-import { WaitlistCount } from "@/components/WaitlistCount";
+import { StoreButtons } from "@/components/StoreButtons";
 
 export function Hero() {
   return (
@@ -20,13 +19,11 @@ export function Hero() {
           actually lift. Get a plan for your goal, then track every set and meal.
         </p>
 
-        <div className="mt-9 w-full max-w-md">
-          <WaitlistForm id="join" />
-        </div>
+        <StoreButtons className="mt-9" />
 
-        <div className="mt-8 flex justify-center">
-          <WaitlistCount />
-        </div>
+        <p className="mt-6 text-sm text-bone-60">
+          Free to start. iPhone now, Android soon.
+        </p>
       </section>
     </AuroraBackground>
   );
