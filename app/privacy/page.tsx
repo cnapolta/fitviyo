@@ -85,6 +85,73 @@ export default function PrivacyPage() {
         your own activity in the app.
       </p>
 
+      <h3>Health Connect (Android)</h3>
+      <p>
+        If you connect Fitviyo to Health Connect, we read the following data,
+        read-only. Fitviyo never writes any data back to Health Connect.
+      </p>
+      <p>
+        <strong>What we read</strong>
+      </p>
+      <ul>
+        <li>Steps: your daily step count.</li>
+        <li>Distance: walking and running distance.</li>
+        <li>Exercise: duration of exercise sessions.</li>
+      </ul>
+      <p>
+        <strong>Why we read it</strong>
+      </p>
+      <p>
+        Solely to show your daily movement toward your step goal on the Today
+        screen and to calculate your step streak. Nothing else.
+      </p>
+      <p>
+        <strong>What leaves your device</strong>
+      </p>
+      <ul>
+        <li>
+          Your daily step total is stored on our servers (Supabase) so your
+          progress syncs across your devices and survives reinstalling the app.
+        </li>
+        <li>
+          Distance and exercise duration are displayed on your device only; they
+          are never sent to our servers.
+        </li>
+        <li>
+          Your step history is read on the device to calculate your streak and is
+          not stored by us.
+        </li>
+      </ul>
+      <p>
+        <strong>What we never do</strong>
+      </p>
+      <ul>
+        <li>We never use Health Connect data for advertising or marketing.</li>
+        <li>
+          We never sell it, and we never share or transfer it to data brokers,
+          information resellers, or any third party.
+        </li>
+        <li>
+          We never use it for any purpose other than the features described
+          above.
+        </li>
+      </ul>
+      <p>
+        <strong>Your control</strong>
+      </p>
+      <ul>
+        <li>
+          You can revoke Fitviyo&apos;s access at any time in Health Connect
+          &rarr; App permissions. Revoking access stops all reading immediately;
+          step totals already saved to your account remain until you delete them.
+        </li>
+        <li>
+          Deleting your Fitviyo account (Settings &rarr; Delete account, or by
+          emailing <a href={`mailto:${site.email}`}>{site.email}</a>) permanently
+          deletes all stored step data along with the rest of your account.
+        </li>
+      </ul>
+
       <h3>Subscriptions</h3>
       <p>
         If you subscribe to Fitviyo Pro, purchases are handled by the App Store
@@ -149,7 +216,8 @@ export default function PrivacyPage() {
       <h2>Legal bases (GDPR)</h2>
       <p>
         Where the GDPR applies, we rely on: your consent (for waitlist email,
-        push notifications, Apple Health access, and AI features); performance
+        push notifications, Apple Health and Health Connect access, and AI
+        features); performance
         of a contract
         (to provide your account and subscription); and our legitimate interests
         (to keep the service secure and to improve it using anonymous analytics).
@@ -213,8 +281,8 @@ export default function PrivacyPage() {
           <strong>Unsubscribe:</strong> opt out of waitlist email at any time.
         </li>
         <li>
-          <strong>Withdraw consent:</strong> turn off notifications or Apple
-          Health access in your device settings.
+          <strong>Withdraw consent:</strong> turn off notifications, or revoke
+          Apple Health or Health Connect access in your device settings.
         </li>
       </ul>
       <p>
