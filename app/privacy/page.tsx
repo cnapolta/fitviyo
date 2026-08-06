@@ -69,13 +69,13 @@ export default function PrivacyPage() {
         To make the app work, you may provide profile details (such as display
         name, goal, experience level, training days, equipment, units, birth
         year, sex, height, starting weight, and activity level) and the data you
-        log: workouts and sets, food entries, water, steps, and weight. Some of
-        this is health and fitness information, which we treat with extra care.
-        It is stored under your account (anonymous or signed-in) with row-level
-        security, so only you can access it.
+        log: workouts and sets, food entries, water, steps, walks and runs, and
+        weight. Some of this is health and fitness information, which we treat
+        with extra care. It is stored under your account (anonymous or signed-in)
+        with row-level security, so only you can access it.
       </p>
 
-      <h3>Apple Health</h3>
+      <h3>Apple Health (iOS)</h3>
       <p>
         If you grant permission, Fitviyo reads step data from Apple Health to
         show it alongside your training. We only access what you allow, and you
@@ -87,77 +87,43 @@ export default function PrivacyPage() {
 
       <h3>Health Connect (Android)</h3>
       <p>
-        If you connect Fitviyo to Health Connect, we read the following data,
-        read-only. Fitviyo never writes any data back to Health Connect.
+        If you grant permission, Fitviyo reads three types of data from Health
+        Connect, read-only: your daily <strong>step count</strong>, your walking
+        and running <strong>distance</strong>, and the duration of your{" "}
+        <strong>exercise sessions</strong>. Fitviyo never writes any data back to
+        Health Connect.
       </p>
       <p>
-        <strong>What we read</strong>
-      </p>
-      <ul>
-        <li>Steps: your daily step count.</li>
-        <li>Distance: walking and running distance.</li>
-        <li>Exercise: duration of exercise sessions.</li>
-      </ul>
-      <p>
-        <strong>Why we read it</strong>
+        We read this data for one purpose: to show your daily movement toward
+        your step goal on the Today screen and to calculate your step streak.
       </p>
       <p>
-        Solely to show your daily movement toward your step goal on the Today
-        screen and to calculate your step streak. Nothing else.
+        What leaves your device: your daily step total is stored under your
+        account on our servers so your progress syncs across your devices and
+        survives reinstalling the app. Distance and exercise duration are shown
+        on your device only and are never sent to our servers. Your step history
+        is read on the device to calculate your streak and is not stored by us.
       </p>
       <p>
-        <strong>What leaves your device</strong>
+        Data obtained from Health Connect is never used for advertising or
+        marketing, never sold, and never shared or transferred to data brokers,
+        information resellers, or any other third party. It is never used for any
+        purpose other than the features described above.
       </p>
-      <ul>
-        <li>
-          Your daily step total is stored on our servers (Supabase) so your
-          progress syncs across your devices and survives reinstalling the app.
-        </li>
-        <li>
-          Distance and exercise duration are displayed on your device only; they
-          are never sent to our servers.
-        </li>
-        <li>
-          Your step history is read on the device to calculate your streak and is
-          not stored by us.
-        </li>
-      </ul>
       <p>
-        <strong>What we never do</strong>
+        You can revoke Fitviyo&apos;s access at any time in Health Connect &rarr;
+        App permissions; revoking stops all reading immediately. Step totals
+        already saved to your account remain until you delete them, and deleting
+        your Fitviyo account removes them along with the rest of your data.
       </p>
-      <ul>
-        <li>We never use Health Connect data for advertising or marketing.</li>
-        <li>
-          We never sell it, and we never share or transfer it to data brokers,
-          information resellers, or any third party.
-        </li>
-        <li>
-          We never use it for any purpose other than the features described
-          above.
-        </li>
-      </ul>
-      <p>
-        <strong>Your control</strong>
-      </p>
-      <ul>
-        <li>
-          You can revoke Fitviyo&apos;s access at any time in Health Connect
-          &rarr; App permissions. Revoking access stops all reading immediately;
-          step totals already saved to your account remain until you delete them.
-        </li>
-        <li>
-          Deleting your Fitviyo account (Settings &rarr; Delete account, or by
-          emailing <a href={`mailto:${site.email}`}>{site.email}</a>) permanently
-          deletes all stored step data along with the rest of your account.
-        </li>
-      </ul>
 
       <h3>Subscriptions</h3>
       <p>
         If you subscribe to Fitviyo Pro, purchases are handled by the App Store
-        and managed through RevenueCat. We receive your subscription status (for
-        example, whether Pro is active and when it renews), not your full payment
-        details, which stay with Apple.
+        on iOS or Google Play on Android, and managed through RevenueCat. We
+        receive your subscription status (for example, whether Pro is active and
+        when it renews), not your full payment details, which stay with Apple or
+        Google.
       </p>
 
       <h3>Push notifications</h3>
@@ -182,11 +148,11 @@ export default function PrivacyPage() {
       <ul>
         <li>To provide the app: logging, sync, community, and progress views.</li>
         <li>To look up foods you search (see Food data below).</li>
-        <li>To manage your Fitviyo Pro subscription and unlock Pro features.</li>
         <li>
-          To power optional AI features (workout import and weekly insight) when
-          you use them.
+          To power optional AI features (workout import, meal logging, and weekly
+          insight) when you use them (see AI features below).
         </li>
+        <li>To manage your Fitviyo Pro subscription and unlock Pro features.</li>
         <li>To send notifications you have opted into.</li>
         <li>To keep the service secure and to fix and improve it.</li>
         <li>To tell waitlist members about early access and launch.</li>
@@ -203,12 +169,13 @@ export default function PrivacyPage() {
       <h2>AI features</h2>
       <p>
         Fitviyo Pro includes optional AI features: turning a training program
-        you paste or describe into structured workouts, and a weekly insight
+        you paste or describe into structured workouts, estimating calories and
+        macros from a meal you describe in your own words, and a weekly insight
         that summarizes your own activity. When you use these, the text you
         provide or a compact summary of your recent training, nutrition, water,
         and steps is sent through our secure server to Google&apos;s Gemini API
         to generate the result, and is returned to you in the app. This data is
-        sent only to produce your result and is handled under Google&apos;s API
+        processed to produce your result and is handled under Google&apos;s API
         terms; we do not use it to build a profile of you or to serve ads. AI
         features run only when you choose to use them.
       </p>
@@ -216,11 +183,10 @@ export default function PrivacyPage() {
       <h2>Legal bases (GDPR)</h2>
       <p>
         Where the GDPR applies, we rely on: your consent (for waitlist email,
-        push notifications, Apple Health and Health Connect access, and AI
-        features); performance
-        of a contract
-        (to provide your account and subscription); and our legitimate interests
-        (to keep the service secure and to improve it using anonymous analytics).
+        push notifications, Apple Health or Health Connect access, and AI
+        features); performance of a contract (to provide your account and
+        subscription); and our legitimate interests (to keep the service secure
+        and to improve it using anonymous analytics).
       </p>
 
       <h2>Who we share data with</h2>
@@ -230,7 +196,10 @@ export default function PrivacyPage() {
       </p>
       <ul>
         <li>Supabase: database, authentication, and storage.</li>
-        <li>RevenueCat and the App Store: subscription management and billing.</li>
+        <li>
+          RevenueCat, the App Store, and Google Play: subscription management and
+          billing.
+        </li>
         <li>OneSignal: push notification delivery.</li>
         <li>FatSecret: food and nutrition lookups.</li>
         <li>Apple and Google: sign-in.</li>
@@ -261,9 +230,10 @@ export default function PrivacyPage() {
       <p>
         Every user table is protected by row-level security so that only the
         owner can read or write their rows. Data is encrypted in transit,
-        authentication tokens are stored in the iOS Keychain, and privileged keys
-        are held only on our servers, never in the app. No system is perfectly
-        secure, but we work to protect your data using industry practices.
+        authentication tokens are stored in the device&apos;s secure storage
+        (iOS Keychain, Android Keystore), and privileged keys are held only on
+        our servers, never in the app. No system is perfectly secure, but we work
+        to protect your data using industry practices.
       </p>
 
       <h2>Your rights and choices</h2>
@@ -273,16 +243,17 @@ export default function PrivacyPage() {
           the app settings for an instant copy of everything (JSON), or email us.
         </li>
         <li>
-          <strong>Delete:</strong> delete your account in the app (You → Settings
-          → Delete account) to permanently erase your account and data, or email
-          us and we will do it.
+          <strong>Delete:</strong> delete your account in the app (You &rarr;
+          Settings &rarr; Delete account) to permanently erase your account and
+          data, or email us and we will do it.
         </li>
         <li>
           <strong>Unsubscribe:</strong> opt out of waitlist email at any time.
         </li>
         <li>
-          <strong>Withdraw consent:</strong> turn off notifications, or revoke
-          Apple Health or Health Connect access in your device settings.
+          <strong>Withdraw consent:</strong> turn off notifications in your device
+          settings, Apple Health access in iOS settings, or Health Connect access
+          in Health Connect &rarr; App permissions.
         </li>
       </ul>
       <p>
